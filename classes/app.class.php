@@ -1,7 +1,6 @@
 <?php
 class app {
 
-
     static $a               = "";
     static $p               = "";
     static $i               = "";
@@ -21,20 +20,16 @@ class app {
     static $myid            = 0;
 
     function __construct($m) {
-
       self::$meta = $m;
       self::$a = isset($m['post']['a'])?$m['post']['a']:'';
 	  self::$p = isset($m['post']['p'])?$m['post']['p']:'';
       self::$i = isset($m['post']['i'])?$m['post']['i']:'';
       unset($m['post']['a'],$m['post']['p'],$m['post']['i']);
       self::$params = $m['post'];
-      //print_r(self::$meta);
-
     }
 
 
     static function quit() {
-
         self::$error = self::$errmsg?true:false;
         $rarr = array(
             "result"    =>self::$result,
@@ -44,18 +39,12 @@ class app {
             'info'      =>self::$info,
             'numrows'   =>self::$numrows
         );
-
       	if(self::$sccmsg&&!self::$result) {
           self::$result = "OK";
         }
-        // var_dump( self::$meta['env']);
-		// self::$meta['env']=='dev'
       	if(self::$dberror) {
           $rarr['dberror'] = self::$dberror;
         }
-
-        // var_dump($rarr);
-
         echo json_encode($rarr);
     }
 
@@ -72,10 +61,6 @@ class app {
         return $uarr;
         }
     return app::$combousers;
-    }
-
-    static function test() {
-      echo self::$errmsg;
     }
 
 }

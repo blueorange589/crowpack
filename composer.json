@@ -1,6 +1,6 @@
 {
-    "name": "crowpack/crowpack",
-    "description": "A short description of what your package does",
+    "name": "crowpack/crowpack-php",
+    "description": "Crowpack classes",
     "authors": [
         {
             "name": "Ozgur Arslan",
@@ -11,7 +11,6 @@
     ],
     "license": "MIT",
     "require": {
-        "php": ">=5.3.0",
-        "another-vendor/package": "1.*"
+        "php": ">=5.3.0"
     }
 }
