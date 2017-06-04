@@ -1,8 +1,4 @@
 <?php
-// APPLICATION CONFIGURATION
-$APPFOLDER = "isapp";
-
-
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
@@ -20,7 +16,8 @@ $meta['page']   = isset($meta['get']['p'])?$meta['get']['p']:'index';
 
 
 if($meta['env']=='dev') {
-    $meta['base']="http://localhost/".$APPFOLDER."/";
+    $meta['base']="http://localhost/";
+    if(CONFIG::$LOCALFOLDER) { $meta['base'] .= CONFIG::$LOCALFOLDER."/"; }
     $meta['cdn']= $meta['base']."assets/";
 } else {
     $meta['base']= $SITEURL;

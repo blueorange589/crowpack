@@ -1,0 +1,23 @@
+# vendor libraries composer/bower
+/vendor
+
+# zend studio for eclipse project files
+.buildpath
+.project
+.settings
+
+# windows thumbnail cache
+Thumbs.db
+
+# composer itself is not needed
+composer.phar
+
+# Mac DS_Store Files
+.DS_Store
+
+# ssh keys
+/ssh
+
+# Bower configuration
+/.bowerrc
+/bower.json

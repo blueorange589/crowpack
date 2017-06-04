@@ -5,6 +5,7 @@ class CONFIG {
     static $SITEURL                = '';
     static $SITETITLE              = '';
     static $APPNAME                = '';
+    
 
     /* DATABASE */
     static $DBHOST                 = '';
@@ -18,6 +19,9 @@ class CONFIG {
     static $TWILIO_KEY             = '';
     static $TWILIO_SECRET          = '';
     
+    
+    /* DEV VARS */
+    static $LOCALFOLDER            = 'crowpack-php';
 }
 
 
