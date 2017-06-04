@@ -1,0 +1,39 @@
+{
+  "name": "crowpack",
+  "homepage": "https://github.com/blueorange589/crowpack",
+  "authors": [
+    "Ozgur Arslan <blueorange589@gmail.com>"
+  ],
+  "description": "starter pack",
+  "main": "",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:blueorange589/crowpack.gitt"
+  },
+  "dependencies": {
+    "jquery": "latest",
+    "bootstrap": "latest",
+    "blockUI": "latest",
+    "sweetalert2": "latest",
+    "ie10-viewport-bug-workaround": "latest"
+  },
+  "_release": "1ec4797a67",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "1ec4797a67aa46b2e7d5b9c5c1e0279421b9d1d7"
+  },
+  "_source": "https://github.com/blueorange589/crowpack.git",
+  "_target": "*",
+  "_originalSource": "crowpack",
+  "_direct": true
+}

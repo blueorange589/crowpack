@@ -26,8 +26,8 @@ if(CONFIG::$ENVIRONMENT=='dev') {
 }
 
 CONFIG::$PROJECTFOLDER  = CONFIG::$ROOTFOLDER.CONFIG::$APPFOLDER;
-CONFIG::$CDN            = CONFIG::$BASEURL."vendor/bower/crowpack/assets/";
-CONFIG::$CDNPATH        = CONFIG::$PROJECTFOLDER."vendor/bower/crowpack/assets/";
+CONFIG::$CDN            = CONFIG::$BASEURL."assets/";
+CONFIG::$CDNPATH        = CONFIG::$PROJECTFOLDER."assets/";
 
 
 ?>
