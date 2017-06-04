@@ -1,3 +1,3 @@
-<div id="index">
+<div id="index" class="page">
     Index Content
 </div>

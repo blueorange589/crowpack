@@ -5,23 +5,29 @@ error_reporting(E_ALL);
 date_default_timezone_set('Europe/London');
 session_start();
 
-
 $meta           = array();
 $meta['get']    = $_GET;
 $meta['post']   = $_POST;
 $meta['files']  = $_FILES;
-$meta['env']    = $_SERVER['SERVER_NAME'] == 'localhost'?'dev':'production';
 $meta['page']   = isset($meta['get']['p'])?$meta['get']['p']:'index';
 
 
+CONFIG::$ENVIRONMENT = $_SERVER['SERVER_NAME'] == 'localhost'?'dev':'production';
+if(CONFIG::$ENVIRONMENT=='dev') {
 
-if($meta['env']=='dev') {
-    $meta['base']="http://localhost/";
-    if(CONFIG::$LOCALFOLDER) { $meta['base'] .= CONFIG::$LOCALFOLDER."/"; }
-    $meta['cdn']= $meta['base']."assets/";
+    CONFIG::$ROOTFOLDER = '/var/www/html/';
+    CONFIG::$APPFOLDER  = 'crowpack-php/';
+    CONFIG::$BASEURL    = "http://localhost/".CONFIG::$APPFOLDER;
+
 } else {
-    $meta['base']= $SITEURL;
-    $meta['cdn']= $meta['base']."assets/";
+
+    CONFIG::$BASEURL    = CONFIG::$SITEURL.CONFIG::$APPFOLDER;
+
 }
+
+CONFIG::$PROJECTFOLDER  = CONFIG::$ROOTFOLDER.CONFIG::$APPFOLDER;
+CONFIG::$CDN            = CONFIG::$BASEURL."vendor/bower/crowpack/assets/";
+CONFIG::$CDNPATH        = CONFIG::$PROJECTFOLDER."vendor/bower/crowpack/assets/";
+
 
 ?>

@@ -3,8 +3,10 @@ class CONFIG {
     
     /* SITE CONFIGURATION */
     static $SITEURL                = '';
-    static $SITETITLE              = '';
-    static $APPNAME                = '';
+    static $SITETITLE              = 'Starter Template';
+    static $APPNAME                = 'StarterAPP';
+    static $ROOTFOLDER             = '';
+    static $APPFOLDER              = '';
     
 
     /* DATABASE */
@@ -20,9 +22,14 @@ class CONFIG {
     static $TWILIO_SECRET          = '';
     
     
-    /* DEV VARS */
-    static $LOCALFOLDER            = 'crowpack-php';
+    /* LEAVE BLANK */
+    static $ENVIRONMENT            = '';
+    static $PROJECTFOLDER          = '';
+    static $BASEURL                = '';
+    static $CDN                    = '';
+    static $CDNPATH                = '';
+
+
+
 }
-
-
 ?>

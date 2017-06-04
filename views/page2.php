@@ -1,3 +1,3 @@
-<div id="page2">
+<div id="page2" class="page">
     Page 2 Content
 </div>

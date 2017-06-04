@@ -76,7 +76,19 @@ class helper {
         }
     }
     
-    
+    /* ------ FILES -------- */
+    public static function listfiles($dir,$ext) {
+        $views = scandir($dir);
+        unset($views[0], $views[1]);
+        $list = array();
+        foreach($views as $v) {
+            $f = explode('.',$v);
+            if($f[1]==$ext) {
+                $list[] = $f[0];
+            }
+        }
+    return $list;
+    }
     
   
 }
