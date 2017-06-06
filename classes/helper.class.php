@@ -15,7 +15,15 @@ class helper {
     
     
   // ---- ARRAY ---- //
-  static function arraytable($multiarr,$before,$between,$after,$seperator='') {
+  static function rowstosingle($rows,$key) {
+      $newarr = array();
+      foreach($rows as $row) {
+          $newarr[]=$row[$key];
+      }
+  return $newarr;
+  }
+
+  static function multiarraytotable($multiarr,$before,$between,$after,$seperator='') {
       $out='';
       foreach($multiarr as $arr) {
           $out .= $seperator;

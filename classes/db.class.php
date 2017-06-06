@@ -19,7 +19,7 @@ class db {
     function __construct() {
       //mysqli_report( MYSQLI_REPORT_STRICT );
       try {
-        self::$link = new mysqli(app::$meta['dbhost'], app::$meta['dbuser'], app::$meta['dbpass'], app::$meta['dbdb']);
+        self::$link = new mysqli(CONFIG::$DBHOST, CONFIG::$DBUSER, CONFIG::$DBPASS, CONFIG::$DBNAME);
       } catch (Exception $e) {
         echo $e->message;
         exit;
@@ -34,7 +34,7 @@ class db {
       	$full_query = self::$link->query( $query );
         if( self::$link->error )
         {
-            app::$dberror = self::$link->error;
+            APP::$DBERROR = self::$link->error;
             return false; 
         }
         else
@@ -77,10 +77,10 @@ class db {
         $stmt->execute();
 
         if($stmt->error) {
-            app::$dberror = $stmt->error;
+            APP::$DBERROR = $stmt->error;
             return false; 
         }
-        app::$insertid = $stmt->insert_id;
+        APP::$INSERTID = $stmt->insert_id;
         $stmt->close();
     return true;
     }
@@ -120,16 +120,16 @@ class db {
         $stmt->execute();
         
         if($stmt->error) {
-            app::$dberror = $stmt->error;
+            APP::$DBERROR = $stmt->error;
             return false; 
         } 
         
         $result = $stmt->get_result();
-        app::$numrows = $result->num_rows;
+        APP::$NUMROWS = $result->num_rows;
         $stmt->close();
         
         $resultarr = array();
-        if(app::$numrows>0) {
+        if(APP::$NUMROWS>0) {
             while ($row = $result->fetch_assoc()) {
                 $resultarr[]=$row;
             }
@@ -191,7 +191,7 @@ class db {
         
         $stmt = self::$link->prepare($query);
         if(!$stmt) { 
-            app::$dberror = self::$link->error;
+            APP::$DBERROR = self::$link->error;
             exit; 
         }
 
@@ -199,11 +199,11 @@ class db {
         $stmt->execute();
         
         if($stmt->error) {
-            app::$dberror = $stmt->error;
+            APP::$DBERROR = $stmt->error;
             return false; 
         } 
         $result = $stmt->get_result();
-        app::$numrows = $result->num_rows;
+        APP::$NUMROWS = $result->num_rows;
         //echo self::$numrows;
         $stmt->close();
         
@@ -262,7 +262,7 @@ class db {
         
         $stmt = self::$link->prepare($q);
         if(!$stmt) { 
-            app::$dberror = self::$link->error;
+            APP::$DBERROR = self::$link->error;
             exit; 
         }
         //print_r($bind_arguments);
@@ -270,16 +270,16 @@ class db {
         $stmt->execute();
         
         if($stmt->error) {
-            app::$dberror = $stmt->error;
+            APP::$DBERROR = $stmt->error;
             return false; 
         } 
         
         $result = $stmt->get_result();
-        app::$numrows = $result->num_rows;
+        APP::$NUMROWS = $result->num_rows;
         $stmt->close();
         
         $row = array();
-        if(app::$numrows>0) {
+        if(APP::$NUMROWS>0) {
             while ($r = $result->fetch_assoc()) {
                 
                 foreach($r as $k=>$v) {
@@ -345,17 +345,17 @@ class db {
         $stmt = self::$link->prepare($q);
         
         if(!$stmt) { 
-          app::$dberror = self::$link->error;
+          APP::$DBERROR = self::$link->error;
           exit;
         }
         call_user_func_array(array($stmt, 'bind_param'), $bind_arguments);
         
         $stmt->execute();
         if($stmt->error) {
-            app::$dberror = $stmt->error;
+            APP::$DBERROR = $stmt->error;
             return false; 
         }
-        app::$numrows = $stmt->affected_rows;
+        APP::$NUMROWS = $stmt->affected_rows;
         $stmt->close();
     return true;
     }
@@ -383,16 +383,16 @@ class db {
         $q = 'DELETE FROM '.$t.' WHERE '.$wt;
         $stmt = self::$link->prepare($q);
         if(!$stmt) {
-          app::$dberror = self::$link->error;
+          APP::$DBERROR = self::$link->error;
           exit; 
         }
         call_user_func_array(array($stmt, 'bind_param'), $bind_arguments);
         $stmt->execute();
         if($stmt->error) {
-            app::$dberror = $stmt->error;
+            APP::$DBERROR = $stmt->error;
             return false; 
         }
-        app::$numrows = $stmt->affected_rows;
+        APP::$NUMROWS = $stmt->affected_rows;
         $stmt->close();
     return true;
     }

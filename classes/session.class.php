@@ -1,115 +1,111 @@
 <?php
 class session {
-  
-  static function login($phn,$code) {
-	  if(!$phn) {
-		  app::$errmsg="Phone number can not be empty";
-		  return false;
-	  }
-	  if(!$code) {
-		  app::$errmsg="Access code can not be empty";
-		  return false;
-	  }
-      //var_dump($eml);
-    $user = db::selectrow('*','users', array('phone'=>$phn));
-      
-    if(!$user) {
-      app::$errmsg = "Phone number not found";
-      return false;
-    }
-    if($code!=$user['authcode']) {
-      app::$errmsg = 'Access code is invalid.';
-      return false;
-    }
-	$_SESSION['udata'] = $user;
-  return self::setsession($user['id']);
-  }
     
-  static function setsession($uid) {
-    $sarr = array (
-      'sid'		=> helper::hash(16),
-      'user' 	=> $uid,
-      'logintime' => time()
-    );
-      
-    $act = db::insert('sessions', $sarr);
-    //var_dump($act);
+    public static function manage() {
+        // public site
+        if(APP::GET('SITEVARS')['requireauth']==false) { return 'allow'; }
+
+        // is loggedin on requested site?
+        if(self::checksession()) { return 'allow'; }
+
+        // if post login authfields, check authdb.authcols
+        if(self::authonsite()) { return 'allow'; }
+
+    return 'block';
+    }
+
+    private static function checksession() {
+        $authsave = APP::GET('SITEVARS')['authsave'];
+        $authsavekey = APP::GET('SITEVARS')['authsavekey'];
+        if($authsave=='COOKIE') {
+            if(isset($_COOKIE[$authsavekey])) {
+                $set = self::setuserdata($_COOKIE[$authsavekey]);
+                if($set) {
+                    APP::SET('LOGGEDIN',true);
+                    return true;
+                }
+            }
+        }
+        if($authsave=='SESSION') {
+            if(isset($_SESSION[$authsavekey])) {
+                $set = self::setuserdata($_SESSION[$authsavekey]);
+                if($set) {
+                    APP::SET('LOGGEDIN',true);
+                    return true;
+                }
+            }
+        }
+    return false;
+    }
+
+    private static function authonsite() {
+
+        $authsavekey = APP::GET('SITEVARS')['authsavekey'];
+        $authfields = array_keys(APP::GET('SITEVARS')['authfields']);
+        $allok = 1;
+
+        foreach($authfields as $k=>$f) {
+            if(!isset(APP::GET('POST')[$f])) { $allok=0; }
+        }
+        if(!$allok) { return false; }
+
+        if(APP::GET('SITEVARS')['authtype']=='basic') {
+            if(!self::authbasic()) { return false; }
+        } else {
+            // select user by username
+
+            // compare pwd
+
+            // insert to authdb uid,token,time
+        }
+
+
+
+        // if successful save to authsave
+        $key = helper::hash(8);
+        if(APP::GET('SITEVARS')['authsave']=='COOKIE') {
+            setcookie($authsavekey, $key, time()+30*24*3600);
+        }
+        if(APP::GET('SITEVARS')['authsave']=='SESSION') {
+            $_SESSION[$authsavekey] = $key;
+        }
+        header('Location:'.APP::GET('SITEURL').APP::GET('SITE'));
+    }
     
-    if($act) {
-      $_SESSION['waonline'] = $sarr['sid'];
-      app::$sccmsg = "Login successful";
-      db::update('users', array("timelogin"=>time()), array("id" => $uid));
-      return true;
+    private static function logoutsite() {
+
     }
-    app::$errmsg = "Session information could not be saved";
-  return false;
-  }
-  
-  static function check() {
-    if(!isset(app::$meta['sess']['waonline'])) {
-      return false;
-    }
-    $sid = app::$meta['sess']['waonline'];
-    return db::selectrow('*', 'sessions', array('sid'=>$sid));
-  }
-  
-  static function setuser($uid) {
-    $user = db::selectrow('*', 'users', array('id'=>$uid));
-    if($user) {
-      app::$mydata = $user;
-      app::$myid = $user['id'];
-    return $user;
-    }
-  return false;
-  }
-  
-  
-  
-  
-  
-  
-  
-  // ---- ADMIN ----//
-  static function admlogin($eml,$pwd) {
-    $user = db::selectrow('*','admin', array('username'=>$eml));
-    if(!$user) {
-      app::$errmsg = "User not found";
-      return false;
-    }
-    if(md5($pwd)!=$user['pwd']) {
-      app::$errmsg = "Password does not match";
-      return false;
-    }
-  return self::admsetsession($user['id']);
-  }
     
-  static function admsetsession($uid) {
-    $sarr = array (
-      'sid'		=> helper::hash(16),
-      'user' 	=> $uid,
-      'logintime' => time()
-    );
-    
-    if(db::insert('sessionsadmin', $sarr)) {
-      $_SESSION['wadm'] = $sarr['sid'];
-      app::$sccmsg = "Login successful";
-      db::update('admin', array("lastlogin"=>time()), array("id" => $uid));
-      return true;
+    private static function setuserdata($ssid) {
+        /*
+        $sessdata = DB::SELECTROW('*',APP::GET('SITEVARS')['sessiontable'],array(APP::GET('SITEVARS')['tokencolumn'] => $ssid));
+        if(!$sessdata) { return false; }
+        $columns = DB::SELECTROWSPLAIN('SHOW COLUMNS FROM '.APP::GET('SITEVARS')['authtable'].';');
+        if(($key = array_search(APP::GET('SITEVARS')['authcols']['pwd'], $columns)) !== false) {
+            unset($columns[$key]);
+        }
+        $dbcols = helper::rowstosingle($columns);
+        $user = DB::SELECTROW($dbcols,APP::GET('SITEVARS')['authtable'],array('id'=>$sessdata['uid']));
+        if(!$user) { return false; }
+        APP::SET('ME',$user);
+        APP::SET('MYID',$user['id']);
+        */
+        APP::SET('ME',array('username'=>'blueorange589','firstname'=>'Ozgur','lastname'=>'Arslan'));
+        APP::SET('MYID',7214);
+    return true;
     }
-    app::$errmsg = "Session information could not be saved";
-  return false;
-  }
-  
-  
-  
-  static function admcheck() {
-    if(!isset(app::$meta['sess']['wadm'])) {
-      return false;
+
+    private static function authbasic() {
+        if(APP::GET('POST')['username']!=CONFIG::$USERNAME) {
+            APP::SET('ERRMSG','Invalid Username');
+            return false;
+        }
+        if(APP::GET('POST')['password']!=CONFIG::$PASSWORD) {
+            APP::SET('ERRMSG','Invalid Password');
+            return false;
+        }
+    return true;
     }
-    $sid = app::$meta['sess']['wadm'];
-    return db::selectrow('*', 'sessionsadmin', array('sid'=>$sid));
-  }
-  
   
 }
 ?>

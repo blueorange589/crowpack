@@ -2,12 +2,11 @@
 class CONFIG {
     
     /* SITE CONFIGURATION */
-    static $SITEURL                = '';
-    static $SITETITLE              = 'Starter Template';
     static $APPNAME                = 'StarterAPP';
-    static $ROOTFOLDER             = '';
+    static $APPTITLE               = 'Starter Template';
+    static $APPURL                 = '';
     static $APPFOLDER              = '';
-    
+    static $ROOTFOLDER             = '';
 
     /* DATABASE */
     static $DBHOST                 = '';
@@ -21,15 +20,9 @@ class CONFIG {
     static $TWILIO_KEY             = '';
     static $TWILIO_SECRET          = '';
     
-    
-    /* LEAVE BLANK */
-    static $ENVIRONMENT            = '';
-    static $PROJECTFOLDER          = '';
-    static $BASEURL                = '';
-    static $CDN                    = '';
-    static $CDNPATH                = '';
-
-
+    /* OPTIONAL */ //only change if there is a value
+    static $USERNAME               = 'test';
+    static $PASSWORD               = '123';
 
 }
 ?>

@@ -1,0 +1,66 @@
+/* SET THEME COLORS */
+:root {
+    --color-body-bg             : brown;
+    --color-body-font           : #111;
+    --color-navbar-bg           : green;
+    --color-navbar-bgactive     : yellow;
+    --color-navbar-bgactivefont : black;
+    --color-navbar-font         : white;
+    --color-navbar-hover        : #ccc;
+    --font-family               : 'Helvetica';
+    --font-family2              : 'Arial';
+    --font-size-body            : 11px;
+}
+
+.navbar {
+    min-height: 36px;
+}
+
+.navbar-default {
+    background-color    : var(--color-navbar-bg);
+    color               : var(--color-navbar-font);
+}
+
+.navbar-default .navbar-nav>li>a,.navbar-default .navbar-nav>li>a:link,.navbar-default .navbar-nav>li>a:visited {
+    color               : var(--color-navbar-font);
+    font-weight         : bold;
+    padding-top         : 8px;
+    padding-bottom      : 8px;
+}
+
+.navbar-default .navbar-nav>li>a:hover,.navbar-default .navbar-nav>li>a:focus {
+    color               : var(--color-navbar-hover);
+}
+
+.navbar-default .navbar-nav>.active>a,.navbar-default .navbar-nav>.active>a:focus,.navbar-default .navbar-nav>.active>a:hover.navbar-default .navbar-nav>.active>a:link,.navbar-default .navbar-nav>.active>a:visited {
+    background-color    : var(--color-navbar-bgactive);
+    color               : var(--color-navbar-bgactivefont);
+}
+
+.navbar-default .navbar-brand {
+    color               : var(--color-navbar-font);
+}
+
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover {
+    background-color    : var(--color-navbar-bg);
+    color               : var(--color-navbar-font);
+}
+
+.navbar-brand {
+    font-size           : 14px;
+    font-weight         : bold;
+    height              : auto;
+    padding             : 8px 16px;
+}
+
+.navbar>.container-fluid .navbar-brand:hover {
+    color               : white;
+}
+
+body {
+    min-height          : 2000px;
+    padding-top         : 56px;
+    font-family         : var(--font-family);
+    font-size           : var(--font-size-body);
+    color               : var(--color-body-font);
+}
