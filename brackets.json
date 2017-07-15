@@ -612,8 +612,8 @@
         {
             "scope": "html",
             "trigger": "style",
-            "text": "<style type=\"text/css\">\n    ${1}\n</style>${2}",
-            "mTime": 1500106329760
+            "text": "style=\"${1}\"${2}",
+            "mTime": 1500114340609
         },
         {
             "trigger": "small",
@@ -656,6 +656,24 @@
             "scope": "html",
             "text": "name=\"${1}\"${2}",
             "mTime": 1500106532503
+        },
+        {
+            "trigger": "value",
+            "scope": "html",
+            "text": "value=\"${1}\"${2}",
+            "mTime": 1500114771722
+        },
+        {
+            "trigger": "phpecho",
+            "scope": "html",
+            "text": "<?php echo ${1}; ?>${2}",
+            "mTime": 1500114843906
+        },
+        {
+            "scope": "html",
+            "trigger": "php",
+            "text": "<?php\n    ${1}\n?>",
+            "mTime": 1500120994280
         },
         {
             "trigger": "ani",
@@ -758,8 +776,9 @@
             "trigger": "if",
             "scope": "php",
             "description": "if",
-            "text": "if (${1:condition})\n{\n  ${2}\n}",
-            "source": "system"
+            "text": "if (${1:condition}) {\n  ${2}\n}",
+            "source": "system",
+            "mTime": 1500111186830
         },
         {
             "trigger": "ifelse",
@@ -769,11 +788,12 @@
             "source": "system"
         },
         {
-            "trigger": "if?",
+            "trigger": "ternary",
             "scope": "php",
             "description": "if ternary",
-            "text": "$${1:var}= (${2:condition}) ? ${3:TRUE} : ${4:FALSE};",
-            "source": "system"
+            "text": "$${1}=${2}?${3}:${4}",
+            "source": "system",
+            "mTime": 1500112459594
         },
         {
             "trigger": "for",
@@ -786,8 +806,9 @@
             "trigger": "foreach",
             "scope": "php",
             "description": "foreach value",
-            "text": "foreach ($${1:var} as $${2:value})\n{\n  ${3}\n}",
-            "source": "system"
+            "text": "foreach ($${1:var} as $${2:value}) {\n  ${3}\n}",
+            "source": "system",
+            "mTime": 1500109628566
         },
         {
             "trigger": "foreachkey",
@@ -849,8 +870,9 @@
             "trigger": "isset",
             "scope": "php",
             "description": "isset",
-            "text": "isset($${1:var});",
-            "source": "system"
+            "text": "isset($${1:var})",
+            "source": "system",
+            "mTime": 1500108592138
         },
         {
             "trigger": "array",
@@ -1023,6 +1045,91 @@
             "scope": "php",
             "text": "${1:var} = {2:bool};",
             "mTime": 1500102532640
+        },
+        {
+            "trigger": "post",
+            "scope": "php",
+            "text": "$_POST[${1}]${2}",
+            "mTime": 1500108638811
+        },
+        {
+            "trigger": "get",
+            "scope": "php",
+            "text": "$_GET[${1}]${2}",
+            "mTime": 1500108655346
+        },
+        {
+            "trigger": "session",
+            "text": "$_SESSION[${1}]${2}",
+            "scope": "php",
+            "mTime": 1500108672187
+        },
+        {
+            "trigger": "cookie",
+            "scope": "php",
+            "text": "$_COOKIE[${1}]${2}",
+            "mTime": 1500108688655
+        },
+        {
+            "trigger": "server",
+            "scope": "php",
+            "text": "$_SERVER[${1}]${2}",
+            "mTime": 1500108700439
+        },
+        {
+            "trigger": "wpdelete",
+            "scope": "php",
+            "text": "$wpdb->delete($${1:table}, $${2:where});",
+            "mTime": 1500110945614
+        },
+        {
+            "scope": "php",
+            "trigger": "inarray",
+            "description": "Searches haystack for needle using loose comparison unless strict is set. Returns TRUE if needle is found in the array, FALSE otherwise.",
+            "text": "in_array('${1}',$${2:haystack})",
+            "mTime": 1500111620062
+        },
+        {
+            "trigger": "q",
+            "scope": "php",
+            "text": "'${1}'${2}",
+            "mTime": 1500111783030
+        },
+        {
+            "trigger": "qq",
+            "scope": "php",
+            "text": "\"${1}\"${2}",
+            "mTime": 1500111689791
+        },
+        {
+            "trigger": "keystr",
+            "scope": "php",
+            "text": "'${1}'  => '${2}',\n",
+            "mTime": 1500111909265
+        },
+        {
+            "trigger": "keyvar",
+            "scope": "php",
+            "text": "'${1}'  => $${2},\n",
+            "mTime": 1500111953169
+        },
+        {
+            "scope": "php",
+            "trigger": "wpreplace",
+            "text": "$wpdb->replace( ${1:table}, array('id'=>1,'col'=>'sth') );",
+            "mTime": 1500113588716
+        },
+        {
+            "trigger": "wpnumrows",
+            "scope": "php",
+            "text": "$wpdb->num_rows",
+            "mTime": 1500120510214
+        },
+        {
+            "trigger": "wplasterror",
+            "scope": "php",
+            "text": "$wpdb->last_error",
+            "mTime": 1500120525777
         }
     ]
 }
