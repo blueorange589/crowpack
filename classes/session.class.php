@@ -14,25 +14,35 @@ class session {
     return 'block';
     }
 
+    public static function logoutsite() {
+
+    }
+
+
+    /* ------------- PRIVATE ---------------- */
     private static function checksession() {
         $authsave = APP::GET('SITEVARS')['authsave'];
         $authsavekey = APP::GET('SITEVARS')['authsavekey'];
         if($authsave=='COOKIE') {
             if(isset($_COOKIE[$authsavekey])) {
-                $set = self::setuserdata($_COOKIE[$authsavekey]);
-                if($set) {
-                    APP::SET('LOGGEDIN',true);
-                    return true;
+                if(APP::GET('SITEVARS')['authtype']=='db') {
+                    if(!self::setuserdata($_COOKIE[$authsavekey])) {
+                        return false;
+                    }
                 }
+                APP::SET('LOGGEDIN',true);
+                return true;
             }
         }
         if($authsave=='SESSION') {
             if(isset($_SESSION[$authsavekey])) {
-                $set = self::setuserdata($_SESSION[$authsavekey]);
-                if($set) {
-                    APP::SET('LOGGEDIN',true);
-                    return true;
+                if(APP::GET('SITEVARS')['authtype']=='db') {
+                    if(!self::setuserdata($_SESSION[$authsavekey])) {
+                        return false;
+                    }
                 }
+                APP::SET('LOGGEDIN',true);
+                return true;
             }
         }
     return false;
@@ -52,35 +62,19 @@ class session {
         if(APP::GET('SITEVARS')['authtype']=='basic') {
             if(!self::authbasic()) { return false; }
         } else {
-            // select user by username
-
-            // compare pwd
-
-            // insert to authdb uid,token,time
+            if(!self::authdb()) { return false; }
+            if(!self::setuserdata()) { return false; }
         }
 
+        if(!self::savesession()) { return false; }
 
-
-        // if successful save to authsave
-        $key = helper::hash(8);
-        if(APP::GET('SITEVARS')['authsave']=='COOKIE') {
-            setcookie($authsavekey, $key, time()+30*24*3600);
-        }
-        if(APP::GET('SITEVARS')['authsave']=='SESSION') {
-            $_SESSION[$authsavekey] = $key;
-        }
-        header('Location:'.APP::GET('SITEURL').APP::GET('SITE'));
-    }
-    
-    private static function logoutsite() {
-
+    return true;
     }
     
     private static function setuserdata($ssid) {
-        /*
-        $sessdata = DB::SELECTROW('*',APP::GET('SITEVARS')['sessiontable'],array(APP::GET('SITEVARS')['tokencolumn'] => $ssid));
+        $sessdata = db::selectrow('*',APP::GET('SITEVARS')['sessiontable'],array(APP::GET('SITEVARS')['tokencolumn'] => $ssid));
         if(!$sessdata) { return false; }
-        $columns = DB::SELECTROWSPLAIN('SHOW COLUMNS FROM '.APP::GET('SITEVARS')['authtable'].';');
+        $columns = db::selectrowsplain('SHOW COLUMNS FROM '.APP::GET('SITEVARS')['authtable'].';');
         if(($key = array_search(APP::GET('SITEVARS')['authcols']['pwd'], $columns)) !== false) {
             unset($columns[$key]);
         }
@@ -89,9 +83,7 @@ class session {
         if(!$user) { return false; }
         APP::SET('ME',$user);
         APP::SET('MYID',$user['id']);
-        */
-        APP::SET('ME',array('username'=>'blueorange589','firstname'=>'Ozgur','lastname'=>'Arslan'));
-        APP::SET('MYID',7214);
+
     return true;
     }
 
@@ -105,6 +97,28 @@ class session {
             return false;
         }
     return true;
+    }
+
+    private static function authdb() {
+            // select user by username
+
+            // compare pwd
+
+            // insert to authdb uid,token,time
+    }
+
+    private static function savesession() {
+        $authsavekey = APP::GET('SITEVARS')['authsavekey'];
+        $key = helper::hash(8);
+        if(APP::GET('SITEVARS')['authsave']=='COOKIE') {
+            setcookie($authsavekey, $key, time()+30*24*3600);
+        }
+        if(APP::GET('SITEVARS')['authsave']=='SESSION') {
+            $_SESSION[$authsavekey] = $key;
+        }
+
+        header('Location:'.APP::GET('SITEURL').APP::GET('SITE'));
+        exit();
     }
   
 }

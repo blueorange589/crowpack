@@ -20,9 +20,10 @@ class CONFIG {
     static $TWILIO_KEY             = '';
     static $TWILIO_SECRET          = '';
     
-    /* OPTIONAL */ //only change if there is a value
+    /* BASIC AUTH */
     static $USERNAME               = 'test';
-    static $PASSWORD               = '123';
+    static $PASSWORD               = 'test';
+    static $FULLNAME               = '';
 
 }
 ?>

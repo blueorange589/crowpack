@@ -46,10 +46,37 @@ class init {
     // TODO: get all data required for init
 
     /* ------- PRIVATE AREA ---------- */
+    private static function appendcss() {
+        $files = helper::listfiles(APP::GET('CDNPATH').'css','css');
+        foreach($files as $f) {
+            self::$css[] = APP::GET('CDN').'css/'.$f.'.css';
+        }
+    }
+
+    private static function appendjs() {
+        $files = helper::listfiles(APP::GET('CDNPATH').'js','js');
+        foreach($files as $f) {
+            self::$js[] = APP::GET('CDN').'js/'.$f.'.js';
+        }
+    }
+
     private static function appendviews() {
         self::$views = helper::listfiles(APP::GET('PROJECTFOLDER').'sites/'.APP::GET('SITE').'/views','php');
     }
 
+    private static function setinitjson() {
+        // make viewids
+        $viewids = array();
+        foreach(self::$views as $v) { $viewids[]='#'.$v; }
+
+
+        $json = array(
+            'views'     => self::$views,
+            'viewids'   => $viewids,
+        );
+    self::$initjson = json_encode($json);
+    }
+    
     private static function rendersitelayout() {
         $currentlayout = APP::GET('SITEDIR').APP::GET('SCRIPT').'.php';
         $text = file_get_contents($currentlayout);
@@ -69,32 +96,5 @@ class init {
     self::$html = $text;
     }
 
-    private static function appendcss() {
-        $files = helper::listfiles(APP::GET('CDNPATH').'css','css');
-        foreach($files as $f) {
-            self::$css[] = APP::GET('CDN').'css/'.$f.'.css';
-        }
-    }
-
-    private static function appendjs() {
-        $files = helper::listfiles(APP::GET('CDNPATH').'js','js');
-        foreach($files as $f) {
-            self::$js[] = APP::GET('CDN').'js/'.$f.'.js';
-        }
-    }
-
-    private static function setinitjson() {
-        // make viewids
-        $viewids = array();
-        foreach(self::$views as $v) { $viewids[]='#'.$v; }
-
-
-        $json = array(
-            'views'     => self::$views,
-            'viewids'   => $viewids,
-        );
-    self::$initjson = json_encode($json);
-    }
-    
 }
 ?>

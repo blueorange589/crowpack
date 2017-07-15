@@ -1,0 +1,1028 @@
+{
+    "fonts.fontSize": "12px",
+    "fonts.fontFamily": "'SourceCodePro-Medium', ＭＳ ゴシック, 'MS Gothic', monospace",
+    "extensions.sort": "downloadCount",
+    "brackets-git.gitPath": "git",
+    "mikaeljorhult.bracketsTodo.enabled": false,
+    "themes.theme": "rain.monokai-dark-soda",
+    "debug.showErrorsInStatusBar": true,
+    "linting.collapsed": true,
+    "fileFilters": [
+        {
+            "name": "",
+            "patterns": [
+                "/vendor",
+                "/assets"
+            ]
+        },
+        {
+            "name": "",
+            "patterns": [
+                "/app",
+                "/bin",
+                "/src",
+                "/tests",
+                "/var"
+            ]
+        }
+    ],
+    "useTabChar": true,
+    "spaceUnits": 2,
+    "tabSize": 2,
+    "brackets-snippets.snippetsDirectory": "data",
+    "brackets-snippets.triggerSnippetShortcut": "Ctrl-Enter",
+    "brackets-snippets.showSnippetsPanelShortcut": null,
+    "acb-bootstrap-snippets.enabled": true,
+    "extensions.default.disabled": [
+        "/opt/brackets/www/extensions/default/JavaScriptCodeHints",
+        "/opt/brackets/www/extensions/default/HTMLCodeHints",
+        "/opt/brackets/www/extensions/default/HtmlEntityCodeHints",
+        "/opt/brackets/www/extensions/default/PrefsCodeHints",
+        "/opt/brackets/www/extensions/default/SVGCodeHints",
+        "/opt/brackets/www/extensions/default/UrlCodeHints"
+    ],
+    "edc.brackets-snippets.hints": [
+        {
+            "trigger": "cl",
+            "scope": "javascript",
+            "description": "console.log",
+            "tag": "VanillaJS",
+            "tagHide": true,
+            "text": "console.log(${1:obj});${2}",
+            "source": "system"
+        },
+        {
+            "trigger": "cd",
+            "scope": "javascript",
+            "description": "console.dir",
+            "tag": "VanillaJS",
+            "tagHide": true,
+            "text": "console.dir(${1:obj});${2}",
+            "source": "system"
+        },
+        {
+            "trigger": "ce",
+            "scope": "javascript",
+            "description": "console.error",
+            "tag": "VanillaJS",
+            "tagHide": true,
+            "text": "console.error(${1:obj});${2}",
+            "source": "system"
+        },
+        {
+            "trigger": "cll",
+            "scope": "javascript",
+            "description": "console.log",
+            "tag": "VanillaJS",
+            "tagHide": true,
+            "text": "console.log('${1:obj}:', ${1:obj});${2}",
+            "source": "system"
+        },
+        {
+            "trigger": "cdd",
+            "scope": "javascript",
+            "description": "console.dir",
+            "tag": "VanillaJS",
+            "tagHide": true,
+            "text": "console.dir('${1:obj}:', ${1:obj});${2}",
+            "source": "system"
+        },
+        {
+            "trigger": "cee",
+            "scope": "javascript",
+            "description": "console.error",
+            "tag": "VanillaJS",
+            "tagHide": true,
+            "text": "console.error('${1:obj}:', ${1:obj});${2}",
+            "source": "system"
+        },
+        {
+            "trigger": "ae",
+            "scope": "javascript",
+            "description": "document.addEventListener",
+            "tag": "VanillaJS",
+            "tagHide": true,
+            "text": "${1:document}.addEventListener('${2:event}', function(e) {\n  ${3}\n});",
+            "source": "system"
+        },
+        {
+            "trigger": "ac",
+            "scope": "javascript",
+            "description": "document.appendChild",
+            "tag": "VanillaJS",
+            "tagHide": true,
+            "text": "${1:document}.appendChild(${2:elem});${3}",
+            "source": "system"
+        },
+        {
+            "trigger": "rc",
+            "scope": "javascript",
+            "description": "document.removeChild",
+            "tag": "VanillaJS",
+            "tagHide": true,
+            "text": "${1:document}.removeChild(${2:elem});${3}",
+            "source": "system"
+        },
+        {
+            "trigger": "cel",
+            "scope": "javascript",
+            "description": "document.createElement",
+            "tag": "VanillaJS",
+            "tagHide": true,
+            "text": "${1:document}.createElement(${2:elem});${3}",
+            "source": "system"
+        },
+        {
+            "trigger": "gi",
+            "scope": "javascript",
+            "description": "document.getElementById",
+            "tag": "VanillaJS",
+            "tagHide": true,
+            "text": "${1:document}.getElementById('${2:id}');${3}",
+            "source": "system"
+        },
+        {
+            "trigger": "gc",
+            "scope": "javascript",
+            "description": "document.getElementsByClassName",
+            "tag": "VanillaJS",
+            "tagHide": true,
+            "text": "${1:document}.getElementsByClassName('${2:class}');${3}",
+            "source": "system"
+        },
+        {
+            "trigger": "gt",
+            "scope": "javascript",
+            "description": "document.getElementsByTagName",
+            "tag": "VanillaJS",
+            "tagHide": true,
+            "text": "${1:document}.getElementsByTagName('${2:tag}');${3}",
+            "source": "system"
+        },
+        {
+            "trigger": "qs",
+            "scope": "javascript",
+            "description": "document.querySelector",
+            "tag": "VanillaJS",
+            "tagHide": true,
+            "text": "${1:document}.querySelector('${2:selector}');${3}",
+            "source": "system"
+        },
+        {
+            "trigger": "qsa",
+            "scope": "javascript",
+            "description": "document.querySelectorAll",
+            "tag": "VanillaJS",
+            "tagHide": true,
+            "text": "${1:document}.querySelectorAll('${2:selector}');${3}",
+            "source": "system"
+        },
+        {
+            "trigger": "fe",
+            "scope": "javascript",
+            "description": "forEach",
+            "tag": "VanillaJS",
+            "tagHide": true,
+            "text": "${1:myArray}.forEach(function (${2:elem}) {\n  ${3}\n});",
+            "source": "system"
+        },
+        {
+            "trigger": "fi",
+            "scope": "javascript",
+            "description": "for in",
+            "tag": "VanillaJS",
+            "tagHide": true,
+            "text": "for (${1:prop} in ${2:obj}) {\n  if (${2:obj}.hasOwnProperty(${1:prop})) {\n    ${3}\n  }\n}",
+            "source": "system"
+        },
+        {
+            "trigger": "fn",
+            "scope": "javascript",
+            "description": "function",
+            "tag": "VanillaJS",
+            "tagHide": true,
+            "text": "function ${1:methodName} (${2:arguments}) {\n  ${3}\n}",
+            "source": "system"
+        },
+        {
+            "trigger": "afn",
+            "scope": "javascript",
+            "description": "anonymous function",
+            "tag": "VanillaJS",
+            "tagHide": true,
+            "text": "function (${1:arguments}) {\n  ${2}\n}",
+            "source": "system"
+        },
+        {
+            "trigger": "pr",
+            "scope": "javascript",
+            "description": "prototype",
+            "tag": "VanillaJS",
+            "tagHide": true,
+            "text": "${1:ClassName}.prototype.${2:methodName} = function (${3:arguments}) {\n  ${4}\n};",
+            "source": "system"
+        },
+        {
+            "trigger": "sw",
+            "scope": "javascript",
+            "description": "switch statement",
+            "tag": "VanillaJS",
+            "tagHide": true,
+            "text": "switch(${1:expression}) {\n  case ${2:value}:\n    ${3}\n    break;\n  default:\n    break;\n}",
+            "source": "system"
+        },
+        {
+            "trigger": "si",
+            "scope": "javascript",
+            "description": "setInterval",
+            "tag": "VanillaJS",
+            "tagHide": true,
+            "text": "setInterval(function() {\n  ${2}\n}, ${1:delay});",
+            "source": "system"
+        },
+        {
+            "trigger": "st",
+            "scope": "javascript",
+            "description": "setTimeout",
+            "tag": "VanillaJS",
+            "tagHide": true,
+            "text": "setTimeout(function() {\n  ${2}\n}, ${1:delay});",
+            "source": "system"
+        },
+        {
+            "trigger": "jqeach",
+            "text": "$.each(${1},function(index,val) {\n\t${2}\n});",
+            "scope": "javascript",
+            "mTime": 1500104648113
+        },
+        {
+            "trigger": "jqselid",
+            "scope": "javascript",
+            "text": "$('#${1}')",
+            "mTime": 1500104631696
+        },
+        {
+            "trigger": "jqselclass",
+            "text": "$('.${1}')",
+            "scope": "javascript",
+            "mTime": 1500104636655
+        },
+        {
+            "trigger": "object",
+            "scope": "javascript",
+            "text": "var {1:objname} = {\n    {2:propname}     : '',\n    {3:methodname}() {\n    }\n};",
+            "mTime": 1500103060138
+        },
+        {
+            "trigger": "swal",
+            "scope": "javascript",
+            "text": "swal({title: \"{1:title}!\",text:{2:msg},type:\"{3:type}\",confirmButtonText:\"OK\"},function () {});",
+            "mTime": 1500103201214
+        },
+        {
+            "trigger": "varstr",
+            "text": "var {1:var}= \"{2:string}\";",
+            "scope": "javascript",
+            "mTime": 1500103247515
+        },
+        {
+            "trigger": "varvar",
+            "scope": "javascript",
+            "text": "var {1:var} = {2:var};",
+            "mTime": 1500103280660
+        },
+        {
+            "trigger": "varnum",
+            "scope": "javascript",
+            "text": "var {1:var} = {2:num};",
+            "mTime": 1500103320838
+        },
+        {
+            "trigger": "varbool",
+            "scope": "javascript",
+            "text": "var {1:var} = {2:bool};",
+            "mTime": 1500103334616
+        },
+        {
+            "trigger": "a",
+            "scope": "html",
+            "description": "Anchor Tag",
+            "text": "<a href=\"${1}\">${2}</a>${3}",
+            "source": "system"
+        },
+        {
+            "trigger": "doctype",
+            "scope": "html",
+            "description": "Boilerplate HTML",
+            "text": "<!doctype html>\n<html>\n    <head>\n        <meta charset=\"utf-8\">\n        <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n        <meta name=\"description\" content=\"\">\n        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n        <title>${1:Document}</title>\n        <link rel=\"stylesheet\" href=\"css/style.css\">\n    </head>\n    <body>\n        ${2}\n\n        <script src=\"//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js\"></script>\n        <script src=\"js/main.js\"></script>\n    </body>\n</html>",
+            "source": "system"
+        },
+        {
+            "trigger": "css",
+            "scope": "html",
+            "description": "Style Tag",
+            "text": "<style type=\"text/css\">\n    ${1}\n</style>${2}",
+            "source": "system",
+            "mTime": 1500106267001
+        },
+        {
+            "trigger": "ga2",
+            "scope": "html",
+            "description": "New Google Analytics",
+            "text": "<script>\n    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){\n    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),\n    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)\n    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');\n\n    ga('create', '${1:UA-XXXX-X}');\n    ga('send', 'pageview');\n</script>",
+            "source": "system"
+        },
+        {
+            "trigger": "imgdummy",
+            "scope": "html",
+            "description": "Dummy Image",
+            "text": "<img src=\"http://dummyimage.com/${1:800}x${2:600}/4d494d/686a82.gif&text=${3:placeholder+image}\" alt=\"${3:placeholder+image}\">${4}",
+            "source": "system",
+            "mTime": 1500101999220
+        },
+        {
+            "trigger": "link",
+            "scope": "html",
+            "description": "Link Tag",
+            "text": "<link rel=\"stylesheet\" type=\"text/css\" href=\"${1}\">${2}",
+            "source": "system"
+        },
+        {
+            "trigger": "jquery",
+            "scope": "html",
+            "description": "jQuery Tag",
+            "text": "<script src=\"//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js\"></script>\n<script>window.jQuery || document.write('<script src=\"js/vendor/jquery-1.11.2.min.js\"><\\/script>')</script>",
+            "source": "system"
+        },
+        {
+            "trigger": "lorem",
+            "scope": "html",
+            "description": "Dummy Text",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor\nincididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis\nnostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\nDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu\nfugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in\nculpa qui officia deserunt mollit anim id est laborum.",
+            "source": "system"
+        },
+        {
+            "trigger": "meta",
+            "scope": "html",
+            "description": "Meta Tag",
+            "text": "<meta charset=utf-8>\n<meta name=description content=\"${1}\">\n<meta name=viewport content=\"width=device-width, initial-scale=1\">${2}",
+            "source": "system"
+        },
+        {
+            "text": "<!--${1}",
+            "trigger": "comstart",
+            "scope": "html",
+            "mTime": 1500106670435
+        },
+        {
+            "text": "-->${1}",
+            "trigger": "comend",
+            "scope": "html",
+            "mTime": 1500106663970
+        },
+        {
+            "trigger": "b",
+            "scope": "html",
+            "description": "bold",
+            "text": "<b>${1}</b>${2}",
+            "mTime": 1500106614121
+        },
+        {
+            "trigger": "img",
+            "scope": "html",
+            "text": "<img src=\"${1}\">",
+            "mTime": 1500104668198
+        },
+        {
+            "trigger": "br",
+            "scope": "html",
+            "text": "<br>${1}",
+            "mTime": 1500106633635
+        },
+        {
+            "trigger": "span",
+            "scope": "html",
+            "text": "<span>${1}</span>",
+            "mTime": 1500104672390
+        },
+        {
+            "trigger": "class",
+            "scope": "html",
+            "text": "class=\"${1}\"${2}",
+            "mTime": 1500106649974
+        },
+        {
+            "trigger": "id",
+            "scope": "html",
+            "text": "id=\"${1}\"",
+            "mTime": 1500105177602
+        },
+        {
+            "trigger": "alt",
+            "scope": "html",
+            "text": "alt=\"${1}\"${2}",
+            "mTime": 1500106610251
+        },
+        {
+            "trigger": "select",
+            "scope": "html",
+            "text": "<select name=\"${1}\">\n    ${2}\n</select>",
+            "mTime": 1500105271805
+        },
+        {
+            "trigger": "option",
+            "scope": "html",
+            "text": "<option value=\"${1}\">${2}</option>",
+            "mTime": 1500105312769
+        },
+        {
+            "trigger": "table",
+            "scope": "html",
+            "text": "<table>\n    ${1}\n</table>",
+            "mTime": 1500106785416
+        },
+        {
+            "trigger": "thead",
+            "text": "<thead>\n    ${1}\n</thead>",
+            "scope": "html",
+            "mTime": 1500106804271
+        },
+        {
+            "trigger": "tbody",
+            "scope": "html",
+            "text": "<tbody>\n    ${1}\n</tbody>",
+            "mTime": 1500106822000
+        },
+        {
+            "trigger": "tr",
+            "scope": "html",
+            "text": "<tr>${1}</tr>",
+            "mTime": 1500105397249
+        },
+        {
+            "text": "<td>${1}</td>${2}",
+            "trigger": "td",
+            "scope": "html",
+            "mTime": 1500106830259
+        },
+        {
+            "trigger": "inputtext",
+            "scope": "html",
+            "text": "<input type=\"text\" name=\"${1}\">${2}",
+            "mTime": 1500106769981
+        },
+        {
+            "trigger": "inputhidden",
+            "scope": "html",
+            "text": "<input type=\"hidden\" name=\"${1}\">${2}",
+            "mTime": 1500106760127
+        },
+        {
+            "trigger": "form",
+            "scope": "html",
+            "text": "<form method=\"${1}\">\n    ${2}\n</form>${3}",
+            "mTime": 1500106715447
+        },
+        {
+            "trigger": "button",
+            "scope": "html",
+            "text": "<button type=\"${1}\">${2}</button>${3}",
+            "mTime": 1500106645339
+        },
+        {
+            "trigger": "inputsubmit",
+            "scope": "html",
+            "text": "<input type=\"submit\" name=\"${1}\" value=\"${2}\">${3}",
+            "mTime": 1500106766173
+        },
+        {
+            "trigger": "div",
+            "scope": "html",
+            "text": "<div>\n    ${1}\n</div>${2}",
+            "mTime": 1500106683012
+        },
+        {
+            "trigger": "body",
+            "scope": "html",
+            "text": "<body>\n    ${1}\n</body>${2}",
+            "mTime": 1500106624562
+        },
+        {
+            "trigger": "code",
+            "scope": "html",
+            "text": "<code>${1}</code>${2}",
+            "mTime": 1500106654331
+        },
+        {
+            "trigger": "footer",
+            "scope": "html",
+            "text": "<footer>\n    ${1}\n</footer>${2}",
+            "mTime": 1500106704057
+        },
+        {
+            "trigger": "h1",
+            "scope": "html",
+            "text": "<h1>${1}</h1>",
+            "mTime": 1500105834377
+        },
+        {
+            "trigger": "h2",
+            "scope": "html",
+            "text": "<h2>${1}</h2>",
+            "mTime": 1500105846559
+        },
+        {
+            "trigger": "h3",
+            "scope": "html",
+            "text": "<h3>${1}</h3>",
+            "mTime": 1500105854934
+        },
+        {
+            "trigger": "h4",
+            "scope": "html",
+            "text": "<h4>${1}</h4>",
+            "mTime": 1500105866780
+        },
+        {
+            "trigger": "h5",
+            "scope": "html",
+            "text": "<h5>${1}</h5>",
+            "mTime": 1500105876261
+        },
+        {
+            "trigger": "h6",
+            "scope": "html",
+            "text": "<h6>${1}</h6>",
+            "mTime": 1500105885211
+        },
+        {
+            "trigger": "hr",
+            "scope": "html",
+            "text": "<hr>",
+            "mTime": 1500105907330
+        },
+        {
+            "trigger": "header",
+            "scope": "html",
+            "text": "<header>${1}</header>",
+            "mTime": 1500105923035
+        },
+        {
+            "trigger": "html",
+            "scope": "html",
+            "text": "<html>${1}</html>",
+            "mTime": 1500105941845
+        },
+        {
+            "trigger": "label",
+            "scope": "html",
+            "text": "<label>${1}</label>",
+            "mTime": 1500105974206
+        },
+        {
+            "trigger": "action",
+            "scope": "html",
+            "text": "action=\"${1}\"${2}",
+            "mTime": 1500106606680
+        },
+        {
+            "trigger": "ul",
+            "scope": "html",
+            "text": "<ul>\n    ${1}\n</ul>${2}",
+            "mTime": 1500106741205
+        },
+        {
+            "trigger": "li",
+            "text": "<li>\n    ${1}\n</li>${2}",
+            "scope": "html",
+            "mTime": 1500106752274
+        },
+        {
+            "trigger": "ol",
+            "scope": "html",
+            "text": "<ol>${1}</ol>",
+            "mTime": 1500106116888
+        },
+        {
+            "trigger": "script",
+            "scope": "html",
+            "text": "<script type=\"text/javascript\">\n    ${1}\n</script>",
+            "mTime": 1500106168319
+        },
+        {
+            "scope": "html",
+            "trigger": "style",
+            "text": "<style type=\"text/css\">\n    ${1}\n</style>${2}",
+            "mTime": 1500106329760
+        },
+        {
+            "trigger": "small",
+            "scope": "html",
+            "text": "<small>${1}</small>${2}",
+            "mTime": 1500106356787
+        },
+        {
+            "trigger": "textarea",
+            "scope": "html",
+            "text": "<textarea name=\"${1}\">${2}</textarea>${3}",
+            "mTime": 1500106392126
+        },
+        {
+            "trigger": "tfoot",
+            "scope": "html",
+            "text": "<tfoot>${1}</tfoot>${2}",
+            "mTime": 1500106414909
+        },
+        {
+            "trigger": "th",
+            "scope": "html",
+            "text": "<th>${1}</th>${2}",
+            "mTime": 1500106433798
+        },
+        {
+            "trigger": "enctype",
+            "scope": "html",
+            "text": "enctype=\"multipart/form-data\"${1}",
+            "mTime": 1500106693021
+        },
+        {
+            "trigger": "method",
+            "scope": "html",
+            "text": "method=\"${1}\"${2}",
+            "mTime": 1500106511971
+        },
+        {
+            "trigger": "name",
+            "scope": "html",
+            "text": "name=\"${1}\"${2}",
+            "mTime": 1500106532503
+        },
+        {
+            "trigger": "ani",
+            "scope": "css",
+            "description": "Animation",
+            "text": "-webkit-animation: ${1:name} ${2:duration};\nanimation: ${1:name} ${2:duration};${3}",
+            "source": "system"
+        },
+        {
+            "trigger": "aft",
+            "scope": "css",
+            "description": "After",
+            "text": "${1}:after {\n    content: '';\n    ${2}\n}",
+            "source": "system"
+        },
+        {
+            "trigger": "box",
+            "scope": "css",
+            "description": "Box Shadow",
+            "text": "box-shadow: ${1:horizontal}px ${2:vertical}px ${3:blur-radius}px ${4:spread-distance}px ${5:#eee};${6}",
+            "source": "system"
+        },
+        {
+            "trigger": "flex",
+            "scope": "css",
+            "description": "Flexbox",
+            "text": ".flex-container {\n  display: -webkit-box;\n  display: -moz-box;\n  display: -ms-flexbox;\n  display: -webkit-flex;\n  display: flex;\n\n  -webkit-flex-flow: row wrap;\n  justify-content: space-around;\n}\n\n.flex-item {\n  flex: 1;\n  background: tomato;\n  padding: 50px;\n  margin: 5px;\n  color: white;\n  text-align: center;\n}",
+            "source": "system"
+        },
+        {
+            "trigger": "fontfamily",
+            "scope": "css",
+            "description": "Font Family",
+            "text": "font-family: Helvetica, Arial, sans-serif;",
+            "source": "system",
+            "mTime": 1500105105683
+        },
+        {
+            "trigger": "key",
+            "scope": "css",
+            "description": "KeyFrames",
+            "text": "@-webkit-keyframes ${1:name} {\n    0% {\n      ${2:-webkit-transform: translate3d(0, 0, 0);}\n    }\n    100% {\n      ${3:-webkit-transform: translate3d(0, 0, 0);}\n    }\n}\n@keyframes ${1:name} {\n    0% {\n      ${2:transform: translate3d(0, 0, 0);}\n    }\n    100% {\n      ${3:transform: translate3d(0, 0, 0);}\n    }\n}",
+            "source": "system"
+        },
+        {
+            "trigger": "med",
+            "scope": "css",
+            "description": "Media",
+            "text": "@media (min-width: ${1}) {\n  ${2}\n}",
+            "source": "system"
+        },
+        {
+            "trigger": "r",
+            "scope": "css",
+            "description": "RGBA",
+            "text": "rgba(${1:0},${2:0},${3:0},${4:1})${5}",
+            "source": "system"
+        },
+        {
+            "trigger": "tex",
+            "scope": "css",
+            "description": "Text Shadow",
+            "text": "text-shadow: ${1:horizontal}px ${2:vertical}px ${3:blur-radius}px ${4:#eee};${5}",
+            "source": "system"
+        },
+        {
+            "trigger": "cap",
+            "scope": "css",
+            "description": "Capitalize",
+            "text": "text-transform: capitalize;",
+            "source": "system"
+        },
+        {
+            "trigger": "upp",
+            "scope": "css",
+            "description": "Upper Case",
+            "text": "text-transform: uppercase;",
+            "source": "system"
+        },
+        {
+            "trigger": "wra",
+            "scope": "css",
+            "description": "Word Wrap",
+            "text": "overflow-wrap: break-word;\nword-wrap: break-word;",
+            "source": "system"
+        },
+        {
+            "trigger": "width",
+            "scope": "css",
+            "text": "width: ${1}px;",
+            "mTime": 1500104984444
+        },
+        {
+            "text": "vertical-align: ${1};",
+            "trigger": "verticalalign",
+            "scope": "css",
+            "mTime": 1500105064326
+        },
+        {
+            "trigger": "if",
+            "scope": "php",
+            "description": "if",
+            "text": "if (${1:condition})\n{\n  ${2}\n}",
+            "source": "system"
+        },
+        {
+            "trigger": "ifelse",
+            "scope": "php",
+            "description": "if else",
+            "text": "if (${1:condition})\n{\n  ${2}\n}\nelse\n{\n  ${3}\n}",
+            "source": "system"
+        },
+        {
+            "trigger": "if?",
+            "scope": "php",
+            "description": "if ternary",
+            "text": "$${1:var}= (${2:condition}) ? ${3:TRUE} : ${4:FALSE};",
+            "source": "system"
+        },
+        {
+            "trigger": "for",
+            "scope": "php",
+            "description": "for",
+            "text": "for ($i = ${1:init}; $i < ${2:length}; $i++)\n{\n  ${3}\n}",
+            "source": "system"
+        },
+        {
+            "trigger": "foreach",
+            "scope": "php",
+            "description": "foreach value",
+            "text": "foreach ($${1:var} as $${2:value})\n{\n  ${3}\n}",
+            "source": "system"
+        },
+        {
+            "trigger": "foreachkey",
+            "scope": "php",
+            "description": "foreach key value",
+            "text": "foreach ($${1:var} as $${2:key} => $${3:value})\n{\n  ${4}\n}",
+            "source": "system"
+        },
+        {
+            "trigger": "switch",
+            "scope": "php",
+            "description": "switch",
+            "text": "switch ($${1:var})\n{\n  case ${2:'value'}:\n    ${3}\n    break;\n\n  default:\n    break;\n}",
+            "source": "system"
+        },
+        {
+            "trigger": "printr",
+            "scope": "php",
+            "description": "print_r",
+            "text": "print_r($${1:var});",
+            "source": "system"
+        },
+        {
+            "trigger": "fu",
+            "scope": "php",
+            "description": "function",
+            "text": "${1:public} function ${2:FunctionName} ($${3:value} = ${4:''})\n{\n  ${5}\n}",
+            "source": "system"
+        },
+        {
+            "trigger": "echo",
+            "scope": "php",
+            "description": "echo string",
+            "text": "echo '${1:string}';",
+            "source": "system"
+        },
+        {
+            "trigger": "echovar",
+            "scope": "php",
+            "description": "echo variable",
+            "text": "echo $${1:var};",
+            "source": "system"
+        },
+        {
+            "trigger": "echostringvar",
+            "scope": "php",
+            "description": "echo string and variable",
+            "text": "echo '${1:string}' . $${2:var};",
+            "source": "system"
+        },
+        {
+            "trigger": "empty",
+            "scope": "php",
+            "description": "empty",
+            "text": "empty($${1:var});",
+            "source": "system"
+        },
+        {
+            "trigger": "isset",
+            "scope": "php",
+            "description": "isset",
+            "text": "isset($${1:var});",
+            "source": "system"
+        },
+        {
+            "trigger": "array",
+            "scope": "php",
+            "description": "array",
+            "text": "array(${1:value});",
+            "source": "system"
+        },
+        {
+            "trigger": "arrayasoc",
+            "scope": "php",
+            "description": "array associative",
+            "text": "array(${1:key} => ${2:value});",
+            "source": "system"
+        },
+        {
+            "trigger": "jsonencode",
+            "scope": "php",
+            "description": "json encode",
+            "text": "json_encode(${1:data});",
+            "source": "system"
+        },
+        {
+            "trigger": "jsondecode",
+            "scope": "php",
+            "description": "json decode",
+            "text": "json_decode(${1:data});",
+            "source": "system"
+        },
+        {
+            "trigger": "$",
+            "scope": "php",
+            "description": "new variable",
+            "text": "$${1:var} = ${2:value};",
+            "source": "system"
+        },
+        {
+            "trigger": "=?",
+            "scope": "php",
+            "description": "short echo(>=5.4.0)",
+            "text": "<?= ${1} ;?>",
+            "source": "system"
+        },
+        {
+            "trigger": "date",
+            "scope": "php",
+            "description": "php date",
+            "text": "date('${1}')",
+            "source": "system"
+        },
+        {
+            "trigger": "dateo",
+            "scope": "php",
+            "description": "php DateTime",
+            "text": "DateTime()",
+            "source": "system"
+        },
+        {
+            "trigger": "urldecode",
+            "scope": "php",
+            "description": "url decode",
+            "text": "urldecode(${1:str})",
+            "source": "system"
+        },
+        {
+            "trigger": "urlencode",
+            "scope": "php",
+            "description": "url encode",
+            "text": "urlencode(${1:str})",
+            "source": "system"
+        },
+        {
+            "trigger": "array_sort",
+            "scope": "php",
+            "description": "url encode",
+            "text": "asort(${1:array})",
+            "source": "system"
+        },
+        {
+            "trigger": "array_sort_reverse",
+            "scope": "php",
+            "description": "url encode",
+            "text": "arsort(${1:array})",
+            "source": "system"
+        },
+        {
+            "trigger": "wpmail",
+            "description": "",
+            "scope": "php",
+            "text": "$ms = wp_mail( $${1:email}, $${2:subject}, $${3:body});\nif($ms) {\n  // mailsent\n}",
+            "mTime": 1500104840227
+        },
+        {
+            "trigger": "wppagination",
+            "description": "",
+            "scope": "php",
+            "text": "$numres = $wpdb->get_var( \"SELECT COUNT(*) FROM bba_payment_option\" );\n$start = 0;\n$total = 50;\n$totpage = ceil($toknum/$total);\nif(isset($_POST['page'])) {\nif($_POST['page']=='1') {\n\t$start = 0;\n} else {\n\t$mult = $_POST['page']-1;\n\t$start = $total*$mult;\n}\n}\n$payopts = $wpdb->get_results( \"SELECT * FROM bba_payment_option ORDER BY op_name ASC LIMIT \".$start.\", \".$total );",
+            "mTime": 1500104846866
+        },
+        {
+            "scope": "php",
+            "text": "add_action( 'plugins_loaded', 'srvsendmail', 11 );\nfunction srvsendmail() {\n//sendmail\nreturn;\n}",
+            "trigger": "wppluginsloaded",
+            "description": "actions when plugins are loaded, sendmail etc.",
+            "mTime": 1500101447507
+        },
+        {
+            "trigger": "wpupdate",
+            "text": "$${1} = $wpdb->update('srv_questions',array('hidden' => '1'), array('id'=>$${2}));",
+            "scope": "php",
+            "description": "",
+            "mTime": 1500104875245
+        },
+        {
+            "text": "$${1} = $wpdb->insert('srv_exchanges',array('title' => $${2}), array('%s'));",
+            "trigger": "wpinsert",
+            "scope": "php",
+            "mTime": 1500104798855
+        },
+        {
+            "trigger": "wpgetrows",
+            "scope": "php",
+            "text": "$${1} = $wpdb->get_results( \"SELECT * FROM srv_questions WHERE type='\".$${2}.\"' AND hidden='0'\" );",
+            "mTime": 1500104737609
+        },
+        {
+            "trigger": "wpgetrow",
+            "scope": "php",
+            "text": "$${1} = $wpdb->get_row(\"SELECT * FROM srv_styles WHERE identifier='\".$${2}.\"'\");",
+            "mTime": 1500104716562
+        },
+        {
+            "trigger": "wpgetvar",
+            "text": "$${1} = $wpdb->get_var( \"SELECT COUNT(*) FROM bba_payment_option\" );",
+            "scope": "php",
+            "mTime": 1500104774597
+        },
+        {
+            "trigger": "require",
+            "scope": "php",
+            "text": "require '{1:path}';",
+            "mTime": 1500102108399
+        },
+        {
+            "trigger": "substr",
+            "scope": "php",
+            "text": "substr({1:string},{2:start},{3:numchars});",
+            "mTime": 1500102197317
+        },
+        {
+            "trigger": "varstr",
+            "scope": "php",
+            "text": "${1:var} = '{2:string}';",
+            "mTime": 1500102464418
+        },
+        {
+            "trigger": "varvar",
+            "text": "${1:var} = ${2:var};",
+            "scope": "php",
+            "mTime": 1500102494279
+        },
+        {
+            "trigger": "varnum",
+            "scope": "php",
+            "text": "${1:var} = {2:num};",
+            "mTime": 1500102517172
+        },
+        {
+            "trigger": "varbool",
+            "scope": "php",
+            "text": "${1:var} = {2:bool};",
+            "mTime": 1500102532640
+        }
+    ]
+}

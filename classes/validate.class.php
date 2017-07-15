@@ -1,7 +1,7 @@
 <?php
 
-class validation {
-  
+class validate {
+
   static function length($multi) {
     $err=0;
     foreach($multi as $arr) {
@@ -24,7 +24,7 @@ class validation {
     }
   return true;
   }
-  
+
   static function phone($str) {
     $int = preg_replace('/[^0-9]/', '', $str);
     if($int!=$str) {
@@ -41,7 +41,7 @@ class validation {
     }
   return true;
   }
-  
+
 }
 
 ?>

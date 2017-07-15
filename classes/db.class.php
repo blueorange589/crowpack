@@ -28,6 +28,9 @@ class db {
       self::$link->set_charset("utf8");
     }
     
+    static function table($t) {
+        return APP::GET('SITE').'_'.$t;
+    }
     
     static function query( $query ) {
         // echo $query;
@@ -45,6 +48,7 @@ class db {
     
     static function insert($t,$v=array()) {
         
+        $t = self::table($t);
         $sqlbindstring = '';
         $pstr = '';
         $ctext = "(";
@@ -87,6 +91,7 @@ class db {
       
     static function selectrow($s,$f,$w=array()) {
         
+        $f = self::table($f);
         if(is_array($w)) {
             $sqlbindstring = '';
             $pstr = '';
@@ -221,6 +226,8 @@ class db {
     
     
     static function selectrows($s,$f='',$w=array(),$o=array(),$l=array()) {
+
+        if($f) { $f = self::table($f); }
         $vt = '';
         $ot = '';
         $lt = '';
@@ -287,7 +294,7 @@ class db {
                         $users = app::userscombo(); 
                         if(array_key_exists($v,$users)) { $r['x'.$k]=$users[$v]; } else { $r['x'.$k]="0"; }
                     }               
-                    if(substr($k,0,4)=="pric") { $r[$k]=floatval($v); }
+                    if(substr($k,0,5)=="price") { $r[$k]=floatval($v); }
                     if(substr($k,0,4)=="time") { 
                         $r['x'.$k]=date('d-m-Y', $v); 
                         $r['y'.$k]=date('d-m-Y H:i', $v); 
@@ -309,6 +316,8 @@ class db {
     
     
     static function update($t,$set,$w) {
+
+        $t = self::table($t);
         $sqlbindstring ='';
         $st='';
         foreach ($set as $col=>$val) {
@@ -361,6 +370,8 @@ class db {
     }
     
     static function delete ($t,$w) {
+
+        $t = self::table($t);
         $sqlbindstring ='';
         $wt='';
         foreach($w as $key=>$v) {
