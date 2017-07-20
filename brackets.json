@@ -672,8 +672,8 @@
         {
             "scope": "html",
             "trigger": "php",
-            "text": "<?php\n    ${1}\n?>",
-            "mTime": 1500120994280
+            "text": "<?php\n${1}\n?>",
+            "mTime": 1500484880277
         },
         {
             "trigger": "ani",
@@ -799,8 +799,9 @@
             "trigger": "for",
             "scope": "php",
             "description": "for",
-            "text": "for ($i = ${1:init}; $i < ${2:length}; $i++)\n{\n  ${3}\n}",
-            "source": "system"
+            "text": "for ($i = ${1:init}; $i < ${2:length}; $i++) {\n  ${3}\n}",
+            "source": "system",
+            "mTime": 1500485347302
         },
         {
             "trigger": "foreach",
@@ -828,8 +829,9 @@
             "trigger": "printr",
             "scope": "php",
             "description": "print_r",
-            "text": "print_r($${1:var});",
-            "source": "system"
+            "text": "print_r($${1:array});",
+            "source": "system",
+            "mTime": 1500486925757
         },
         {
             "trigger": "fu",
@@ -853,13 +855,6 @@
             "source": "system"
         },
         {
-            "trigger": "echostringvar",
-            "scope": "php",
-            "description": "echo string and variable",
-            "text": "echo '${1:string}' . $${2:var};",
-            "source": "system"
-        },
-        {
             "trigger": "empty",
             "scope": "php",
             "description": "empty",
@@ -873,20 +868,6 @@
             "text": "isset($${1:var})",
             "source": "system",
             "mTime": 1500108592138
-        },
-        {
-            "trigger": "array",
-            "scope": "php",
-            "description": "array",
-            "text": "array(${1:value});",
-            "source": "system"
-        },
-        {
-            "trigger": "arrayasoc",
-            "scope": "php",
-            "description": "array associative",
-            "text": "array(${1:key} => ${2:value});",
-            "source": "system"
         },
         {
             "trigger": "jsonencode",
@@ -903,32 +884,20 @@
             "source": "system"
         },
         {
-            "trigger": "$",
-            "scope": "php",
-            "description": "new variable",
-            "text": "$${1:var} = ${2:value};",
-            "source": "system"
-        },
-        {
-            "trigger": "=?",
+            "trigger": "phpecho",
             "scope": "php",
             "description": "short echo(>=5.4.0)",
-            "text": "<?= ${1} ;?>",
-            "source": "system"
+            "text": "<?php echo ${1}; ?>",
+            "source": "system",
+            "mTime": 1500484863930
         },
         {
             "trigger": "date",
             "scope": "php",
             "description": "php date",
-            "text": "date('${1}')",
-            "source": "system"
-        },
-        {
-            "trigger": "dateo",
-            "scope": "php",
-            "description": "php DateTime",
-            "text": "DateTime()",
-            "source": "system"
+            "text": "date('d-m-Y', ${1});${2}",
+            "source": "system",
+            "mTime": 1500485274082
         },
         {
             "trigger": "urldecode",
@@ -942,20 +911,6 @@
             "scope": "php",
             "description": "url encode",
             "text": "urlencode(${1:str})",
-            "source": "system"
-        },
-        {
-            "trigger": "array_sort",
-            "scope": "php",
-            "description": "url encode",
-            "text": "asort(${1:array})",
-            "source": "system"
-        },
-        {
-            "trigger": "array_sort_reverse",
-            "scope": "php",
-            "description": "url encode",
-            "text": "arsort(${1:array})",
             "source": "system"
         },
         {
@@ -976,8 +931,8 @@
             "scope": "php",
             "text": "add_action( 'plugins_loaded', 'srvsendmail', 11 );\nfunction srvsendmail() {\n//sendmail\nreturn;\n}",
             "trigger": "wppluginsloaded",
-            "description": "actions when plugins are loaded, sendmail etc.",
-            "mTime": 1500101447507
+            "description": "",
+            "mTime": 1500486274899
         },
         {
             "trigger": "wpupdate",
@@ -1049,32 +1004,32 @@
         {
             "trigger": "post",
             "scope": "php",
-            "text": "$_POST[${1}]${2}",
-            "mTime": 1500108638811
+            "text": "$_POST['${1}']${2}",
+            "mTime": 1500195994528
         },
         {
             "trigger": "get",
             "scope": "php",
-            "text": "$_GET[${1}]${2}",
-            "mTime": 1500108655346
+            "text": "$_GET['${1}']${2}",
+            "mTime": 1500196004153
         },
         {
             "trigger": "session",
-            "text": "$_SESSION[${1}]${2}",
+            "text": "$_SESSION['${1}']${2}",
             "scope": "php",
-            "mTime": 1500108672187
+            "mTime": 1500196013183
         },
         {
             "trigger": "cookie",
             "scope": "php",
-            "text": "$_COOKIE[${1}]${2}",
-            "mTime": 1500108688655
+            "text": "$_COOKIE['${1}']${2}",
+            "mTime": 1500196021881
         },
         {
             "trigger": "server",
             "scope": "php",
-            "text": "$_SERVER[${1}]${2}",
-            "mTime": 1500108700439
+            "text": "$_SERVER['${1}']${2}",
+            "mTime": 1500196030918
         },
         {
             "trigger": "wpdelete",
@@ -1085,9 +1040,9 @@
         {
             "scope": "php",
             "trigger": "inarray",
-            "description": "Searches haystack for needle using loose comparison unless strict is set. Returns TRUE if needle is found in the array, FALSE otherwise.",
-            "text": "in_array('${1}',$${2:haystack})",
-            "mTime": 1500111620062
+            "description": "",
+            "text": "in_array(\"${1:value}\", $${2:array})${3}",
+            "mTime": 1500488888131
         },
         {
             "trigger": "q",
@@ -1130,6 +1085,342 @@
             "scope": "php",
             "text": "$wpdb->last_error",
             "mTime": 1500120525777
+        },
+        {
+            "trigger": "settype",
+            "scope": "php",
+            "text": "settype($${1},'string');",
+            "mTime": 1500463360998
+        },
+        {
+            "scope": "php",
+            "trigger": "ksort",
+            "text": "ksort($${1:array});${2}",
+            "mTime": 1500488964504
+        },
+        {
+            "trigger": "start",
+            "scope": "php",
+            "text": "ini_set('display_errors', 1);\nini_set('display_startup_errors', 1);\nerror_reporting(E_ALL);\nsession_start();",
+            "mTime": 1500484808158
+        },
+        {
+            "scope": "php",
+            "trigger": "arrayempty",
+            "text": "array(${1})${2}",
+            "mTime": 1500485040108
+        },
+        {
+            "scope": "php",
+            "trigger": "arrayassoc",
+            "text": "array(\n    '${1}'  => '${2}',\n);",
+            "mTime": 1500485114036
+        },
+        {
+            "trigger": "$",
+            "scope": "php",
+            "text": "$${1} = ${2} ",
+            "mTime": 1500485167968
+        },
+        {
+            "trigger": "ifisset",
+            "scope": "php",
+            "text": "if(isset($${1:var})) { \n    ${2} \n}",
+            "mTime": 1500485445623
+        },
+        {
+            "trigger": "appset",
+            "text": "APP::SET('${1:KEY}',$${2:value});${3}",
+            "scope": "php",
+            "mTime": 1500485646537
+        },
+        {
+            "trigger": "appget",
+            "scope": "php",
+            "text": "APP::GET('${1}')${2}",
+            "mTime": 1500485637054
+        },
+        {
+            "trigger": "appget2",
+            "text": "APP::GET('${1}','${2}')${3}",
+            "scope": "php",
+            "mTime": 1500485630013
+        },
+        {
+            "trigger": "arraykeys",
+            "scope": "php",
+            "text": "array_keys(${1:array})${2}",
+            "mTime": 1500485737375
+        },
+        {
+            "trigger": "dbselectrow",
+            "scope": "php",
+            "text": "db::selectrow('${1:*}','${2:table}',array('${3}'=>'${4}'${5}));${6}",
+            "mTime": 1500485906167
+        },
+        {
+            "trigger": "dbselectrows",
+            "scope": "php",
+            "text": "db::selectrows('${1:*}','${2:table}',array('${3}'=>'${4}'${5}));${6}",
+            "mTime": 1500485928155
+        },
+        {
+            "trigger": "keyval",
+            "scope": "php",
+            "text": "'${1}'=>'${2}', ${3}",
+            "mTime": 1500486019610
+        },
+        {
+            "trigger": "setcookie",
+            "scope": "php",
+            "text": "setcookie('$${1:key}', $${val}, time()+30*24*3600);",
+            "mTime": 1500486083535
+        },
+        {
+            "trigger": "dbinsert",
+            "scope": "php",
+            "text": "db::insert('${1:table}',$${2:arr});${3}",
+            "mTime": 1500486144773
+        },
+        {
+            "trigger": "dbupdate",
+            "scope": "php",
+            "text": "db::update('${1:table}', $${2:updarr});${3} ",
+            "mTime": 1500486196247
+        },
+        {
+            "trigger": "unset",
+            "text": "unset($${1:var});${2}",
+            "scope": "php",
+            "mTime": 1500486221753
+        },
+        {
+            "trigger": "setcookie-delete",
+            "text": "setcookie($${1:key}, \"\", time() - 3600);${2}",
+            "scope": "php",
+            "mTime": 1500486258713
+        },
+        {
+            "trigger": "return",
+            "scope": "php",
+            "text": "return ${1};${2}",
+            "mTime": 1500486303330
+        },
+        {
+            "trigger": "class",
+            "scope": "php",
+            "text": "class ${1:classname} {\n    ${2}\n}",
+            "mTime": 1500486408743
+        },
+        {
+            "trigger": "public",
+            "scope": "php",
+            "text": "public ${1}",
+            "mTime": 1500486485756
+        },
+        {
+            "trigger": "static",
+            "scope": "php",
+            "text": "static ${1}",
+            "mTime": 1500486497848
+        },
+        {
+            "text": "function ${1:name}() {\n    ${2}\n}",
+            "scope": "php",
+            "trigger": "function",
+            "mTime": 1500486543901
+        },
+        {
+            "trigger": "arraycolumn",
+            "scope": "php",
+            "text": "array_column($${1:multiarr}, '${2:column}');${3}",
+            "mTime": 1500486827542,
+            "description": "Return the values from a single column in the input array"
+        },
+        {
+            "trigger": "arraycombine",
+            "scope": "php",
+            "text": "array_combine($${1:keys}, $${2:vals});${3}",
+            "mTime": 1500486816415,
+            "description": "Creates an array by using one array for keys and another for its values"
+        },
+        {
+            "scope": "php",
+            "trigger": "arraycountvalues",
+            "description": "Counts all unique values of an array",
+            "text": "array_count_values($${1:array})${2}",
+            "mTime": 1500486906535
+        },
+        {
+            "trigger": "vardump",
+            "scope": "php",
+            "text": "var_dump($${1:var});${2}",
+            "mTime": 1500486965076
+        },
+        {
+            "trigger": "arraydiffkey",
+            "scope": "php",
+            "text": "array_diff_key($${1:array1}, $${2:array2})${3}",
+            "description": "list keys doesn't exist on array2",
+            "mTime": 1500487109325
+        },
+        {
+            "trigger": "arraydiff",
+            "scope": "php",
+            "text": "array_diff($${1:array1}, $${2:array2});${3}",
+            "description": "values doesn't exist in array2",
+            "mTime": 1500487193369
+        },
+        {
+            "trigger": "arrayfill",
+            "scope": "php",
+            "text": "array_fill(${1:startnum}, ${2:timesnum}, '${3:value}');${4}",
+            "mTime": 1500487323879
+        },
+        {
+            "trigger": "arrayflip",
+            "scope": "php",
+            "text": "array_flip($${1:array})${2}",
+            "description": "switch keys/vals",
+            "mTime": 1500487413361
+        },
+        {
+            "trigger": "arrayintersectkey",
+            "description": "keys exist on array2",
+            "scope": "php",
+            "text": "array_intersect_key($${1:array1}, $${2:array2})${3}",
+            "mTime": 1500487507176
+        },
+        {
+            "description": "values exist on array2",
+            "trigger": "arrayintersect",
+            "scope": "php",
+            "text": "array_intersect($${1:array1}, $${2:array2})${3}",
+            "mTime": 1500487563042
+        },
+        {
+            "trigger": "arraykeyexists",
+            "scope": "php",
+            "text": "array_key_exists('{1:key}', $${2:array})${3}",
+            "mTime": 1500487613429
+        },
+        {
+            "trigger": "array_keys",
+            "scope": "php",
+            "text": "array_keys($${1:array})${2}",
+            "mTime": 1500487661101
+        },
+        {
+            "trigger": "arraymerge",
+            "scope": "php",
+            "text": "array_merge($${1:array1}, $${2:array2})${3}",
+            "mTime": 1500487738500
+        },
+        {
+            "description": "Pop the element off the end of array",
+            "trigger": "arraypop",
+            "scope": "php",
+            "text": "array_pop($${1:array})${2}",
+            "mTime": 1500487878855
+        },
+        {
+            "description": "Push one or more elements onto the end of array",
+            "trigger": "arraypush",
+            "scope": "php",
+            "text": "array_push($${1:array}, \"${2:element}\");${3}",
+            "mTime": 1500487951118
+        },
+        {
+            "trigger": "arrayrand",
+            "description": "Pick one or more random entries out of an array. When picking only one entry, array_rand() returns the key for a random entry. Otherwise, an array of keys for the random entries is returned.",
+            "scope": "php",
+            "text": "array_rand($${1:array}, {2:numkeys});${3}",
+            "mTime": 1500488089951
+        },
+        {
+            "trigger": "arrayreverse",
+            "scope": "php",
+            "text": "array_reverse($${1:array})${2}",
+            "mTime": 1500488185066
+        },
+        {
+            "scope": "php",
+            "trigger": "arrayshift",
+            "description": "Shift an element off the beginning of array",
+            "text": "array_shift($${1:array});${2}",
+            "mTime": 1500488297347
+        },
+        {
+            "trigger": "arrayslice",
+            "scope": "php",
+            "text": "array_slice($${1:array}, $${2:start}, $${3:offset});${4}",
+            "description": "Extract a slice of the array",
+            "mTime": 1500488384378
+        },
+        {
+            "trigger": "arraysum",
+            "scope": "php",
+            "text": "array_sum($${1:array})${2}",
+            "mTime": 1500488440098
+        },
+        {
+            "description": "Removes duplicate values from an array",
+            "trigger": "arrayunique",
+            "scope": "php",
+            "text": "array_unique($${1:array})${2}",
+            "mTime": 1500488490076
+        },
+        {
+            "description": "Prepend one or more elements to the beginning of an array",
+            "text": "array_unshift($${1:array}, \"{2:element}\");${3}",
+            "scope": "php",
+            "trigger": "arrayunshift",
+            "mTime": 1500488578039
+        },
+        {
+            "trigger": "arrayvalues",
+            "scope": "php",
+            "text": "array_values($${1:array})${2}",
+            "mTime": 1500488621465
+        },
+        {
+            "description": "Sort an array in reverse order and maintain index association",
+            "trigger": "arsort",
+            "scope": "php",
+            "text": "arsort($${1:array});${2}",
+            "mTime": 1500488684761
+        },
+        {
+            "description": "Sort an array and maintain index association",
+            "trigger": "asort",
+            "scope": "php",
+            "text": "asort($${1:array});{2}",
+            "mTime": 1500488727370
+        },
+        {
+            "trigger": "count",
+            "scope": "php",
+            "text": "count($${1:array})${2}",
+            "mTime": 1500488809735
+        },
+        {
+            "trigger": "range",
+            "text": "range(${1:numstart}, ${2:numend}, ${3:numincrement})${4}",
+            "description": "Create an array containing a range of elements",
+            "scope": "php",
+            "mTime": 1500491877136
+        },
+        {
+            "trigger": "sort",
+            "text": "sort($${1:array});${2}",
+            "scope": "php",
+            "mTime": 1500492004851
+        },
+        {
+            "trigger": "getdeclaredclasses",
+            "scope": "php",
+            "text": "get_declared_classes()${1}",
+            "mTime": 1500492085183
         }
     ]
 }
