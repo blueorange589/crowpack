@@ -857,17 +857,10 @@
         {
             "trigger": "empty",
             "scope": "php",
-            "description": "empty",
-            "text": "empty($${1:var});",
-            "source": "system"
-        },
-        {
-            "trigger": "isset",
-            "scope": "php",
-            "description": "isset",
-            "text": "isset($${1:var})",
+            "description": "Determine whether a variable is empty",
+            "text": "empty($${1:var})${2}",
             "source": "system",
-            "mTime": 1500108592138
+            "mTime": 1500546907707
         },
         {
             "trigger": "jsonencode",
@@ -974,8 +967,8 @@
         {
             "trigger": "substr",
             "scope": "php",
-            "text": "substr({1:string},{2:start},{3:numchars});",
-            "mTime": 1500102197317
+            "text": "substr($${1:string},${2:start},${3:offset});${4}",
+            "mTime": 1500545612632
         },
         {
             "trigger": "varstr",
@@ -1089,8 +1082,8 @@
         {
             "trigger": "settype",
             "scope": "php",
-            "text": "settype($${1},'string');",
-            "mTime": 1500463360998
+            "text": "settype($${1:var}, \"${2}integer\");${3}",
+            "mTime": 1500547418070
         },
         {
             "scope": "php",
@@ -1101,8 +1094,8 @@
         {
             "trigger": "start",
             "scope": "php",
-            "text": "ini_set('display_errors', 1);\nini_set('display_startup_errors', 1);\nerror_reporting(E_ALL);\nsession_start();",
-            "mTime": 1500484808158
+            "text": "ini_set('display_errors', 1);\nini_set('display_startup_errors', 1);\nerror_reporting(E_ALL);\nsetlocale(LC_ALL, 'en_US');\nsession_start();",
+            "mTime": 1500544040443
         },
         {
             "scope": "php",
@@ -1421,6 +1414,387 @@
             "scope": "php",
             "text": "get_declared_classes()${1}",
             "mTime": 1500492085183
+        },
+        {
+            "trigger": "time",
+            "scope": "php",
+            "text": "time()${1}",
+            "mTime": 1500539572474
+        },
+        {
+            "scope": "php",
+            "trigger": "strtotime",
+            "text": "strtotime(${1})${2}",
+            "mTime": 1500539665818
+        },
+        {
+            "description": "Returns a parent directory's path",
+            "trigger": "dirname",
+            "scope": "php",
+            "text": "// dirname(\"/usr/local/lib\", 2); = /usr\ndirname(\"${1}\");${2}",
+            "mTime": 1500539910825
+        },
+        {
+            "trigger": "fileputcontents",
+            "scope": "php",
+            "text": "file_put_contents('${1:filename}', $${2:data}, FILE_APPEND);${3}",
+            "mTime": 1500540276323
+        },
+        {
+            "text": "file_exists($${1:filename})",
+            "scope": "php",
+            "trigger": "fileexists",
+            "mTime": 1500540097732
+        },
+        {
+            "trigger": "filegetcontents",
+            "scope": "php",
+            "text": "file_get_contents('${1:url-filename}');${2}",
+            "mTime": 1500540197436
+        },
+        {
+            "description": "Reads entire file into an array. line by line",
+            "trigger": "file",
+            "scope": "php",
+            "text": "file('${1:url-filename}');${2}",
+            "mTime": 1500540364859
+        },
+        {
+            "trigger": "snippetcsv",
+            "scope": "php",
+            "description": "export to csv",
+            "text": "// output headers so that the file is downloaded rather than displayed\n$filename = \"data-\".date(\"md\",$startdate).\"-\".date(\"md\",$enddate).\".csv\";\nheader('Content-Type: text/csv; charset=utf-8');\nheader('Content-Disposition: attachment; filename='.$filename);\n\n// create a file pointer connected to the output stream\n$output = fopen('php://output', 'w');\n\n// output the column headings\nfputcsv($output, array('Token', 'Name Surname', 'Email', 'Sent', 'Open', 'Complete', 'Question', 'Type', 'Answer'));\nfputcsv($output, $row);",
+            "mTime": 1500540494629
+        },
+        {
+            "trigger": "fileiswritable",
+            "scope": "php",
+            "text": "is_writable('${1:filename}')${2}",
+            "mTime": 1500540627425
+        },
+        {
+            "trigger": "snippetuploadimage",
+            "scope": "php",
+            "text": "if(isset($_FILES['img'])&&$_FILES['img']['name']){\n\ttry {\n\t\t\tswitch ($_FILES['img']['error']) {\n\t\t\t\t\tcase UPLOAD_ERR_OK:\n\t\t\t\t\t\t\t//$errmsg = '-';\n\t\t\t\t\t\t\tbreak;\n\t\t\t\t\tcase UPLOAD_ERR_NO_FILE:\n\t\t\t\t\t\t\t$errmsg = 'No file sent';\n\t\t\t\t\tcase UPLOAD_ERR_INI_SIZE:\n\t\t\t\t\t\t\t$errmsg = 'Allowed filesize limit reached';\n\t\t\t\t\tcase UPLOAD_ERR_FORM_SIZE:\n\t\t\t\t\t\t\t$errmsg = 'Exceeded filesize limit.';\n\t\t\t\t\tdefault:\n\t\t\t\t\t\t\t$errmsg = 'Unknown errors.';\n\t\t\t}\n\n\t\t\t// You should also check filesize here. \n\t\t\tif ($_FILES['img']['size'] > 1000000) { $errmsg = 'Exceeded filesize limit.'; }\n\n\t\t\t$finfo = new finfo(FILEINFO_MIME_TYPE);\n\t\t\tif (false === $ext = array_search(\n\t\t\t\t\t$finfo->file($_FILES['img']['tmp_name']),\n\t\t\t\t\tarray(\n\t\t\t\t\t\t\t'jpg' => 'image/jpeg',\n\t\t\t\t\t\t\t'png' => 'image/png',\n\t\t\t\t\t\t\t'gif' => 'image/gif',\n\t\t\t\t\t),\n\t\t\t\t\ttrue\n\t\t\t)) {\n\t\t\t\t\t$errmsg = 'Invalid file format.Accepted formats: jpeg, png, gif';\n\t\t\t}\n\t\t\tif(!$errmsg) {\n\t\t\t\t$fname = sprintf('%s.%s', $row->op_name, $ext);\n\t\t\t\t$file = $wppath.'wp-content/plugins/exchange/images/paymentoptions/'.$fname;\n\n\t\t\t\tif(file_exists($file)) {\n\t\t\t\t\t\t// chmod($file,0755); //Change the file permissions if allowed\n\t\t\t\t\t\tunlink($file); //remove the file\n\t\t\t\t}\n\n\t\t\t\tif (!move_uploaded_file($_FILES['img']['tmp_name'],$file)) {\n\t\t\t\t\t\t$errmsg = 'Failed to move uploaded file.';\n\t\t\t\t} else {\n\t\t\t\t\t$wpdb->update('bba_payment_option',array('op_image'=>$fname),array('op_id'=>$row->op_id));\n\t\t\t\t\t$sccmsg = 'Successfully saved';\n\t\t\t\t}\n\t\t\t}\n\t} catch (RuntimeException $e) {\n\t\t\t$errmsg = $e->getMessage();\n\t}\n}\n",
+            "mTime": 1500540967217
+        },
+        {
+            "trigger": "filepathinfo",
+            "description": "Returns information about a file path",
+            "scope": "php",
+            "text": "pathinfo('${1:filename}');${2}",
+            "mTime": 1500541075903
+        },
+        {
+            "trigger": "snippetdownloadimage",
+            "text": "$file = 'monkey.gif';\n\nif (file_exists($file)) {\n    header('Content-Description: File Transfer');\n    header('Content-Type: application/octet-stream');\n    header('Content-Disposition: attachment; filename=\"'.basename($file).'\"');\n    header('Expires: 0');\n    header('Cache-Control: must-revalidate');\n    header('Pragma: public');\n    header('Content-Length: ' . filesize($file));\n    readfile($file);\n    exit;\n}",
+            "scope": "php",
+            "mTime": 1500541272979
+        },
+        {
+            "text": "$ch = curl_init();\ncurl_setopt($ch, CURLOPT_POST, true);\ncurl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);\ncurl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);\ncurl_setopt($ch, CURLOPT_RETURNTRANSFER, true);\nif ($debug === true) {\n    curl_setopt($ch, CURLOPT_VERBOSE, true);\n}\nif ($cookies != '') {\n    curl_setopt($ch, CURLOPT_COOKIESESSION, true);\n    curl_setopt($ch, CURLOPT_COOKIE, $cookies);\n}\ncurl_setopt($ch, CURLOPT_URL, $url);\ncurl_setopt($ch, CURLOPT_POSTFIELDS, $data);\ncurl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));\n$result = false;\nif (($content = curl_exec($ch)) === false) {\n    $errmsg = curl_error($ch);\n} else {\n    $result = json_decode($content,true);\n}\ncurl_close ($ch);\n",
+            "scope": "php",
+            "trigger": "snippetcurl",
+            "mTime": 1500542228259
+        },
+        {
+            "trigger": "sessionstart",
+            "scope": "php",
+            "text": "session_start();${1}",
+            "mTime": 1500543065531
+        },
+        {
+            "trigger": "sessiondestroy",
+            "scope": "php",
+            "text": "session_destroy();${1}",
+            "mTime": 1500543056611
+        },
+        {
+            "trigger": "passwordhash",
+            "scope": "php",
+            "text": "password_hash($${1:pwd}, PASSWORD_DEFAULT);${2}",
+            "mTime": 1500543289736
+        },
+        {
+            "trigger": "passwordverify",
+            "scope": "php",
+            "text": "password_verify($${1:pwd}, $${2:hash});${3}",
+            "mTime": 1500543342740
+        },
+        {
+            "trigger": "explode",
+            "scope": "php",
+            "text": "explode('${1:seperator}', $${2:string});${3}",
+            "mTime": 1500543426081
+        },
+        {
+            "text": "implode('${1:glue}', $${2:array});${3}",
+            "scope": "php",
+            "trigger": "implode",
+            "mTime": 1500543502402
+        },
+        {
+            "trigger": "moneyformat",
+            "scope": "php",
+            "text": "setlocale(LC_MONETARY, 'en_US');\n$number = money_format('%i', $number);",
+            "mTime": 1500543627498
+        },
+        {
+            "text": "nl2br(${1:string})${2}",
+            "trigger": "nl2br",
+            "scope": "php",
+            "mTime": 1500543700646
+        },
+        {
+            "trigger": "md5",
+            "scope": "php",
+            "text": "md5($${1:string})${2}",
+            "mTime": 1500543741473
+        },
+        {
+            "trigger": "urlparse",
+            "scope": "php",
+            "text": "parse_str($${1:url}, $${2:outputarr});${3}",
+            "mTime": 1500543924474
+        },
+        {
+            "trigger": "rtrim",
+            "scope": "php",
+            "text": "rtrim($${1:string},',');${2}",
+            "mTime": 1500543986094
+        },
+        {
+            "trigger": "snippetcsvtoarray",
+            "scope": "php",
+            "text": "$csv = array_map('str_getcsv', file('data.csv'));",
+            "mTime": 1500544162763
+        },
+        {
+            "trigger": "strrepeat",
+            "scope": "php",
+            "text": "str_repeat(\"${1}-=\", ${2}10)${3}",
+            "mTime": 1500544253713
+        },
+        {
+            "trigger": "strreplace",
+            "scope": "php",
+            "text": "str_replace(\"${1:search}\", \"${2:replace}\", $${3:string});${4}",
+            "mTime": 1500544418957
+        },
+        {
+            "trigger": "strsplit",
+            "scope": "php",
+            "text": "str_split($${1:string});${2}",
+            "description": "string to array, letter by letter",
+            "mTime": 1500544490202
+        },
+        {
+            "trigger": "strlen",
+            "scope": "php",
+            "text": "strlen($${1:string})${2}",
+            "mTime": 1500544551426
+        },
+        {
+            "scope": "php",
+            "text": "strpos($${1:string}, '${2:findme}');${3}",
+            "trigger": "strpos",
+            "mTime": 1500545119584
+        },
+        {
+            "trigger": "strstr",
+            "description": "return part of string after match",
+            "text": "strstr($email, '@');",
+            "scope": "php",
+            "mTime": 1500545211706
+        },
+        {
+            "trigger": "strtolower",
+            "scope": "php",
+            "text": "strtolower($${1:string});${2}",
+            "mTime": 1500545308228
+        },
+        {
+            "trigger": "strtoupper",
+            "scope": "php",
+            "text": "strtoupper($${1:string});${2}",
+            "mTime": 1500545334229
+        },
+        {
+            "trigger": "strtr",
+            "description": "string translation",
+            "scope": "php",
+            "text": "strtr($addr, \"äåö\", \"aao\");",
+            "mTime": 1500545386869
+        },
+        {
+            "trigger": "substrcount",
+            "scope": "php",
+            "description": "how many occurences of string in a string",
+            "text": "substr_count($text, 'is');",
+            "mTime": 1500545470526
+        },
+        {
+            "trigger": "ucfirst",
+            "scope": "php",
+            "text": "ucfirst($${1:string});${2}",
+            "mTime": 1500545685585
+        },
+        {
+            "text": "ucwords($${1:string});${2}",
+            "trigger": "ucwords",
+            "scope": "php",
+            "mTime": 1500545722051
+        },
+        {
+            "trigger": "filteremail",
+            "scope": "php",
+            "text": "filter_var($${1:email}, FILTER_VALIDATE_EMAIL);${2}",
+            "mTime": 1500546063235
+        },
+        {
+            "trigger": "filterurl",
+            "scope": "php",
+            "text": "filter_var($${1:url}, FILTER_VALIDATE_URL);${2}",
+            "mTime": 1500546089382
+        },
+        {
+            "trigger": "filterbool",
+            "scope": "php",
+            "text": "filter_var($${1:bool}, FILTER_VALIDATE_BOOLEAN);${2}",
+            "mTime": 1500546205792
+        },
+        {
+            "trigger": "filterfloat",
+            "scope": "php",
+            "text": "filter_var($${1:float}, FILTER_VALIDATE_FLOAT);${2}",
+            "mTime": 1500546234049
+        },
+        {
+            "trigger": "filterinteger",
+            "scope": "php",
+            "text": "filter_var($${1:int}, FILTER_VALIDATE_INT);${2}",
+            "mTime": 1500546261573
+        },
+        {
+            "trigger": "filterip",
+            "scope": "php",
+            "text": "filter_var($${1:ip}, FILTER_VALIDATE_IP);${2}",
+            "mTime": 1500546283588
+        },
+        {
+            "trigger": "filtermac",
+            "scope": "php",
+            "text": "filter_var($${1:mac}, FILTER_VALIDATE_MAC);${2}",
+            "mTime": 1500546302544
+        },
+        {
+            "trigger": "filterregex",
+            "scope": "php",
+            "text": "filter_var($${1:regex}, FILTER_VALIDATE_REGEXP);${2}",
+            "mTime": 1500546328023
+        },
+        {
+            "trigger": "sanitizemail",
+            "scope": "php",
+            "text": "filter_var($${1:email}, FILTER_SANITIZE_EMAIL);${2}",
+            "mTime": 1500546397286
+        },
+        {
+            "trigger": "sanitizefloat",
+            "scope": "php",
+            "text": "filter_var($${1:float}, FILTER_SANITIZE_NUMBER_FLOAT, array('flags'=>FILTER_FLAG_ALLOW_FRACTION));${2}",
+            "mTime": 1500546763521
+        },
+        {
+            "trigger": "sanitizeinteger",
+            "scope": "php",
+            "text": "filter_var($${1:int}, FILTER_SANITIZE_NUMBER_INT);${2}",
+            "mTime": 1500546561902
+        },
+        {
+            "trigger": "sanitizestring",
+            "scope": "php",
+            "text": "filter_var($${1:string}, FILTER_SANITIZE_STRING);${2}",
+            "mTime": 1500546659043
+        },
+        {
+            "trigger": "sanitizeurl",
+            "scope": "php",
+            "text": "filter_var($${1:url}, FILTER_SANITIZE_URL);${2}",
+            "mTime": 1500546689819
+        },
+        {
+            "trigger": "floatval",
+            "scope": "php",
+            "text": "floatval($${1:var});${2}",
+            "mTime": 1500546980961
+        },
+        {
+            "trigger": "gettype",
+            "scope": "php",
+            "text": "gettype($${1:var});${2}",
+            "mTime": 1500547040678
+        },
+        {
+            "trigger": "intval",
+            "scope": "php",
+            "text": "intval($${1:var});${2}",
+            "mTime": 1500547085531
+        },
+        {
+            "trigger": "isarray",
+            "scope": "php",
+            "text": "is_array($${1:var})${2}",
+            "mTime": 1500547119049
+        },
+        {
+            "trigger": "isbool",
+            "scope": "php",
+            "text": "is_bool($${1:var})${2}",
+            "mTime": 1500547142871
+        },
+        {
+            "trigger": "isfloat",
+            "scope": "php",
+            "text": "is_float($${1:var})${2}",
+            "mTime": 1500547163705
+        },
+        {
+            "trigger": "isinteger",
+            "scope": "php",
+            "text": "is_integer($${1:var})${2}",
+            "mTime": 1500547179960
+        },
+        {
+            "trigger": "isnull",
+            "scope": "php",
+            "text": "is_null($${1:var})${2}",
+            "mTime": 1500547204592
+        },
+        {
+            "trigger": "isstring",
+            "scope": "php",
+            "text": "is_string($${1:var})${2}",
+            "mTime": 1500547238928
+        },
+        {
+            "trigger": "isset",
+            "scope": "php",
+            "text": "isset($${1:var})${2}",
+            "mTime": 1500547285296
+        },
+        {
+            "trigger": "strval",
+            "scope": "php",
+            "text": "strval($${1:var});${2}",
+            "mTime": 1500547335339
+        },
+        {
+            "trigger": "xmlfile",
+            "scope": "php",
+            "text": "$xmlobj = simplexml_load_file('${1}test.xml');${2}",
+            "mTime": 1500547568524,
+            "description": "Interprets an XML file into an object"
         }
     ]
 }
