@@ -251,21 +251,21 @@
         },
         {
             "trigger": "jqeach",
-            "text": "$.each(${1},function(index,val) {\n\t${2}\n});",
+            "text": "$.each(${1:arr},function(index,val) {\n\t${2}\n});",
             "scope": "javascript",
-            "mTime": 1500104648113
+            "mTime": 1500559600017
         },
         {
             "trigger": "jqselid",
             "scope": "javascript",
-            "text": "$('#${1}')",
-            "mTime": 1500104631696
+            "text": "$(\"#${1}\").${2}",
+            "mTime": 1500559567681
         },
         {
             "trigger": "jqselclass",
-            "text": "$('.${1}')",
+            "text": "$(\".${1}\").${2}",
             "scope": "javascript",
-            "mTime": 1500104636655
+            "mTime": 1500559555561
         },
         {
             "trigger": "object",
@@ -302,6 +302,266 @@
             "scope": "javascript",
             "text": "var {1:var} = {2:bool};",
             "mTime": 1500103334616
+        },
+        {
+            "scope": "javascript",
+            "trigger": "jqready",
+            "text": "$(document).ready(function(){\n    ${1}\n});",
+            "mTime": 1500559486578
+        },
+        {
+            "trigger": "jqhide",
+            "scope": "javascript",
+            "text": "hide();${1}",
+            "mTime": 1500559646835
+        },
+        {
+            "trigger": "jqclick",
+            "scope": "javascript",
+            "text": "click(function(){\n    ${1}\n});${2}",
+            "mTime": 1500559702562
+        },
+        {
+            "trigger": "jqselattribute",
+            "scope": "javascript",
+            "text": "$(\"a[target='_blank']\")",
+            "mTime": 1500559848647
+        },
+        {
+            "trigger": "jqclickdouble",
+            "scope": "javascript",
+            "text": "dblclick(function(){\n    ${1}\n});${2}",
+            "mTime": 1500559924075
+        },
+        {
+            "trigger": "jqmousedown",
+            "text": "mousedown(function(){\n    ${1}\n});${2}",
+            "scope": "javascript",
+            "mTime": 1500559979114
+        },
+        {
+            "trigger": "jqshow",
+            "scope": "javascript",
+            "text": "show();${1}",
+            "mTime": 1500560041724
+        },
+        {
+            "trigger": "jqtoggle",
+            "text": "toggle();${1}",
+            "scope": "javascript",
+            "mTime": 1500560115414
+        },
+        {
+            "trigger": "jqfadein",
+            "scope": "javascript",
+            "text": "fadeIn(500);${1}",
+            "mTime": 1500560196155
+        },
+        {
+            "trigger": "jqfadeout",
+            "scope": "javascript",
+            "text": "fadeOut(500);${1}",
+            "mTime": 1500560208926
+        },
+        {
+            "trigger": "jqfadetoggle",
+            "scope": "javascript",
+            "text": "fadeToggle(500);${1}",
+            "mTime": 1500560278843
+        },
+        {
+            "trigger": "jqanimate",
+            "scope": "javascript",
+            "text": "animate({left: '250px'});${1}",
+            "mTime": 1500560344258
+        },
+        {
+            "trigger": "jqcallback",
+            "text": "function(){\n  ${1}\n}",
+            "scope": "javascript",
+            "mTime": 1500560443003
+        },
+        {
+            "trigger": "jqgettext",
+            "scope": "javascript",
+            "text": "text();${1}",
+            "mTime": 1500560512110
+        },
+        {
+            "trigger": "jqsettext",
+            "scope": "javascript",
+            "text": "text('${1}');${2}",
+            "mTime": 1500560670414
+        },
+        {
+            "trigger": "jqgethtml",
+            "scope": "javascript",
+            "text": "html();${1}",
+            "mTime": 1500560570505
+        },
+        {
+            "trigger": "jqgetval",
+            "scope": "javascript",
+            "text": "val();${1}",
+            "mTime": 1500560589596
+        },
+        {
+            "trigger": "jqsetval",
+            "scope": "javascript",
+            "text": "val('${1}');${2}",
+            "mTime": 1500560619650
+        },
+        {
+            "trigger": "jqsethtml",
+            "scope": "javascript",
+            "text": "html('${1}');${2}",
+            "mTime": 1500560663172
+        },
+        {
+            "trigger": "jqgetattr",
+            "scope": "javascript",
+            "text": "attr(\"${1}href\");${2}",
+            "mTime": 1500560727150
+        },
+        {
+            "trigger": "jqsetattr",
+            "scope": "javascript",
+            "text": "attr(\"${1}href\", \"${2}https://www.w3schools.com/jquery\");${3}",
+            "mTime": 1500560794059
+        },
+        {
+            "trigger": "jqdomappend",
+            "scope": "javascript",
+            "text": "append(${1});",
+            "mTime": 1500561044132,
+            "description": "inserts content AT THE END of the selected HTML elements."
+        },
+        {
+            "trigger": "jqdomprepend",
+            "scope": "javascript",
+            "text": "prepend(${1});",
+            "mTime": 1500561062317,
+            "description": "inserts content AT THE BEGINNING of the selected HTML elements."
+        },
+        {
+            "trigger": "jqdomafter",
+            "scope": "javascript",
+            "text": "after(${1});",
+            "description": "inserts content AFTER the selected HTML elements.",
+            "mTime": 1500560990496
+        },
+        {
+            "trigger": "jqdombefore",
+            "scope": "javascript",
+            "text": "before(${1});",
+            "description": "inserts content BEFORE the selected HTML elements.",
+            "mTime": 1500561014554
+        },
+        {
+            "trigger": "jqdomremove",
+            "scope": "javascript",
+            "text": "remove('.test');${1}",
+            "mTime": 1500561175532,
+            "description": "if no args, all removed"
+        },
+        {
+            "trigger": "jqdomempty",
+            "scope": "javascript",
+            "text": "empty();${1}",
+            "mTime": 1500561117156
+        },
+        {
+            "trigger": "jqdomaddclass",
+            "scope": "javascript",
+            "text": "addClass(\"${1}blue\");",
+            "mTime": 1500561213358
+        },
+        {
+            "trigger": "jqdomremoveclass",
+            "scope": "javascript",
+            "text": "removeClass(\"${1}blue\");",
+            "mTime": 1500561235787
+        },
+        {
+            "trigger": "jqdomtoggleclass",
+            "scope": "javascript",
+            "text": "toggleClass(\"${1}blue\");",
+            "mTime": 1500561259971
+        },
+        {
+            "trigger": "jqdomcss",
+            "scope": "javascript",
+            "text": "css(\"background-color\", \"yellow\");",
+            "description": "set the background-color value for ALL matched elements:",
+            "mTime": 1500561316439
+        },
+        {
+            "trigger": "jqgetwidth",
+            "scope": "javascript",
+            "text": "outerWidth(true);${1}",
+            "mTime": 1500561428679
+        },
+        {
+            "trigger": "jqgetheight",
+            "scope": "javascript",
+            "text": "outerHeight(true);${1}",
+            "mTime": 1500561448542
+        },
+        {
+            "trigger": "jqfind-children",
+            "scope": "javascript",
+            "text": "children(\"${1}p.first\");",
+            "mTime": 1500561643670
+        },
+        {
+            "trigger": "jqfind",
+            "scope": "javascript",
+            "text": "find(\"${1}span\");",
+            "mTime": 1500561925347,
+            "description": "all span elements in selected element"
+        },
+        {
+            "trigger": "jqfind-siblings",
+            "scope": "javascript",
+            "text": "siblings();${1}",
+            "mTime": 1500561618086
+        },
+        {
+            "trigger": "jqfind-parent",
+            "scope": "javascript",
+            "text": "parent();${1}",
+            "mTime": 1500561684990
+        },
+        {
+            "trigger": "jqfind-siblingnext",
+            "scope": "javascript",
+            "text": "next();${1}",
+            "mTime": 1500561797255
+        },
+        {
+            "trigger": "jqfind-siblingprev",
+            "scope": "javascript",
+            "text": "prev();${1}",
+            "mTime": 1500561782289
+        },
+        {
+            "trigger": "jqfind-filter",
+            "scope": "javascript",
+            "text": "$(\"${1}p\").filter(\"${2}.intro\");",
+            "description": "all <p> elements with class name \"intro\"",
+            "mTime": 1500561894182
+        },
+        {
+            "trigger": "jqxhr-simple",
+            "scope": "javascript",
+            "text": "function xhr(d,sccfn,donefn) {\n\n\tjQuery.when(\n\t\t\tjQuery.ajax({type: \"POST\", url:pluginurl+'request.php', data: d, dataType: 'json',\n\t\t\t\t\tsuccess: function(data) {\n\t\t\t\t\t\t\t//console.log(data);\n\t\t\t\t\t\t\tif(data.dberror) {\n\t\t\t\t\t\t\t\t\tvar ctext = JSON.stringify(data, null, 4);\n\t\t\t\t\t\t\t\t\tconsole.log(ctext);\n\t\t\t\t\t\t\t\t\treturn false;\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\tif(data.errmsg) {\n\t\t\t\t\t\t\t\t\talert(data.errmsg);\n\t\t\t\t\t\t\t\t\treturn false;\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\tif(data.sccmsg) {\n\t\t\t\t\t\t\t\t\talert(data.sccmsg);\n\t\t\t\t\t\t\t\t\tsccfn(data);\n\t\t\t\t\t\t\t\t\treturn true;\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\tif(data.success) {\n\t\t\t\t\t\t\t\t\tsccfn(data);\n\t\t\t\t\t\t\t}\n\t\t\t\t\t},\n\t\t\t\t\terror: function(xhr, status, error) {\n\t\t\t\t\t\t\tvar msg= \"Response: \"+xhr.responseText+\"<br>Status:  \"+status+\"<br>Error: \"+error;\n\t\t\t\t\t\t\tconsole.log(msg);\n\t\t\t\t\t} // end error\n\t\t\t}) // end ajax\n\t).then(function( data, textStatus, jqXHR ) {\n\t\t // Alerts 200\n\t}).done(donefn);\n} // end xhr",
+            "mTime": 1500562011324
+        },
+        {
+            "trigger": "jqxhr-swal",
+            "scope": "javascript",
+            "text": "function xhr(f,d,sccfn,donefn) {\n    $.blockUI({message: '<img src=\"vendor/bower/crowpack/assets/img/spinner.gif\"><h1>Loading</h1>',overlayCSS: {backgroundColor:  '#fff',opacity: 0.8, cursor: 'wait'},css: {border: 0,padding: 0,backgroundColor: 'transparent'}});\n    \n    $.when(\n        $.ajax({type: \"POST\", url: f, data: d, dataType: 'json',\n            success: function(data) {\n                //console.log(data);\n                $.unblockUI();\n                if(data.dberror) {\n                    var ctext = JSON.stringify(data, null, 4);\n                    swal({title: \"Response\",text: ctext,confirmButtonText:\"OK\",customClass:'console'});\n                    return false;\n                }\n                if(data.errmsg) {\n                    swal({title: \"Error!\",text:data.errmsg,type:\"error\",confirmButtonText:\"OK\"});\n                    return false;\n                }\n                if(data.sccmsg) {\n                    swal({title: \"Success!\",text:data.sccmsg,type:\"success\",confirmButtonText:\"OK\"},sccfn(data));\n                    return true;\n                }\n                if(data.success) {\n                    sccfn(data);\n                }\n            },\n            error: function(xhr, status, error) {\n                $.unblockUI();\n                var msg= \"Response: \"+xhr.responseText+\"<br>Status:  \"+status+\"<br>Error: \"+error;\n                swal({title: \"Response\",text: msg,confirmButtonText:\"OK\",customClass:'console'});\n            } // end error\n        }) // end ajax\n    ).then(function( data, textStatus, jqXHR ) {\n       // Alerts 200\n    }).done(donefn);\n} // end xhr",
+            "mTime": 1500562058126
         },
         {
             "trigger": "a",
@@ -674,6 +934,678 @@
             "trigger": "php",
             "text": "<?php\n${1}\n?>",
             "mTime": 1500484880277
+        },
+        {
+            "scope": "html",
+            "trigger": "bs-theme-fixed",
+            "text": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <title>Bootstrap Example</title>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\">\n  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js\"></script>\n  <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js\"></script>\n</head>\n<body>\n\n<div class=\"container\">\n  <h1>My First Bootstrap Page</h1>\n  <p>This is some text.</p> \n</div>\n\n</body>\n</html>",
+            "mTime": 1500559301534,
+            "description": ""
+        },
+        {
+            "scope": "html",
+            "trigger": "bs-theme-fluid",
+            "text": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <title>Bootstrap Example</title>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\">\n  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js\"></script>\n  <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js\"></script>\n</head>\n<body>\n\n<div class=\"container-fluid\">\n  <h1>My First Bootstrap Page</h1>\n  <p>This is some text.</p> \n</div>\n\n</body>\n</html>",
+            "mTime": 1500559309156
+        },
+        {
+            "scope": "html",
+            "trigger": "bs-col4",
+            "text": "<div class=\"row\">\n    <div class=\"col-sm-4\">.col-4</div>\n    <div class=\"col-sm-4\">.col-4</div>\n    <div class=\"col-sm-4\">.col-4</div>\n</div>",
+            "mTime": 1500558374696,
+            "description": "equal-width columns starting at tablets and scaling to large desktops. On mobile phones, the columns will automatically stack"
+        },
+        {
+            "trigger": "bs-col3",
+            "scope": "html",
+            "text": "<div class=\"row\">\n  <div class=\"col-sm-3\">.col-3</div>\n  <div class=\"col-sm-3\">.col-3</div>\n  <div class=\"col-sm-3\">.col-3</div>\n  <div class=\"col-sm-3\">.col-3</div>\n</div>",
+            "mTime": 1500558394887,
+            "description": "three equal-width columns starting at tablets and scaling to large desktops. On mobile phones, the columns will automatically stack"
+        },
+        {
+            "trigger": "bs-col6",
+            "scope": "html",
+            "text": "<div class=\"row\">\n    <div class=\"col-sm-6\">.col-6</div>\n    <div class=\"col-sm-6\">.col-6</div>\n</div>",
+            "mTime": 1500558434187,
+            "description": "equal-width columns starting at tablets and scaling to large desktops. On mobile phones, the columns will automatically stack"
+        },
+        {
+            "trigger": "bs-row",
+            "scope": "html",
+            "text": "<div class=\"row\">\n    ${1}\n</div>",
+            "mTime": 1500558477496
+        },
+        {
+            "trigger": "bs-col",
+            "scope": "html",
+            "text": "<div class=\"col-${1:xs-sm-md-lg}-${2:num}\">${3}</div>",
+            "mTime": 1500558642606
+        },
+        {
+            "trigger": "bs-textmuted",
+            "text": "text-muted${1}",
+            "scope": "html",
+            "mTime": 1500552654863
+        },
+        {
+            "trigger": "bs-textprimary",
+            "scope": "html",
+            "text": "text-primary${1}",
+            "mTime": 1500552642490
+        },
+        {
+            "trigger": "bs-textsuccess",
+            "scope": "html",
+            "text": "text-success${1}",
+            "mTime": 1500552681692
+        },
+        {
+            "scope": "html",
+            "trigger": "bs-textinfo",
+            "text": "text-info${1}",
+            "mTime": 1500552700585
+        },
+        {
+            "trigger": "bs-textwarning",
+            "scope": "html",
+            "text": "text-warning${1}",
+            "mTime": 1500552720345
+        },
+        {
+            "trigger": "bs-textdanger",
+            "scope": "html",
+            "text": "text-danger${1}",
+            "mTime": 1500552740738
+        },
+        {
+            "trigger": "bs-bgprimary",
+            "scope": "html",
+            "text": "bg-primary${1}",
+            "mTime": 1500552766185
+        },
+        {
+            "trigger": "bs-bgsuccess",
+            "scope": "html",
+            "text": "bg-success${1}",
+            "mTime": 1500552789201
+        },
+        {
+            "trigger": "bs-bgwarning",
+            "scope": "html",
+            "text": "bg-warning${1}",
+            "mTime": 1500552803373
+        },
+        {
+            "trigger": "bs-bgdanger",
+            "scope": "html",
+            "text": "bg-danger${1}",
+            "mTime": 1500552816609
+        },
+        {
+            "trigger": "bs-bginfo",
+            "scope": "html",
+            "text": "bg-info${1}",
+            "mTime": 1500552831814
+        },
+        {
+            "trigger": "bs-textlead",
+            "scope": "html",
+            "description": "Makes a paragraph stand out",
+            "text": "lead${1}",
+            "mTime": 1500552923181
+        },
+        {
+            "trigger": "bs-textsmall",
+            "scope": "html",
+            "text": "small${1}",
+            "mTime": 1500552937277
+        },
+        {
+            "trigger": "bs-textleft",
+            "scope": "html",
+            "text": "text-left${1}",
+            "mTime": 1500552963559
+        },
+        {
+            "trigger": "bs-textright",
+            "scope": "html",
+            "text": "text-right${1}",
+            "mTime": 1500552979026
+        },
+        {
+            "trigger": "bs-textcenter",
+            "scope": "html",
+            "text": "text-center${1}",
+            "mTime": 1500552996457
+        },
+        {
+            "trigger": "bs-textlowercase",
+            "text": "text-lowercase${1}",
+            "scope": "html",
+            "mTime": 1500553044111
+        },
+        {
+            "trigger": "bs-textuppercase",
+            "scope": "html",
+            "text": "text-uppercase${1}",
+            "mTime": 1500553058096
+        },
+        {
+            "trigger": "bs-textcapitalize",
+            "scope": "html",
+            "text": "text-capitalize${1}",
+            "mTime": 1500553085344
+        },
+        {
+            "trigger": "bs-table",
+            "scope": "html",
+            "text": "<table class=\"table${1}\">\n    <thead>\n      <tr>\n        <th>Firstname</th>\n        <th>Lastname</th>\n        <th>Email</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td>John</td>\n        <td>Doe</td>\n        <td>john@example.com</td>\n      </tr>\n    </tbody>\n  </table>",
+            "mTime": 1500558927220
+        },
+        {
+            "trigger": "bs-tablestriped",
+            "scope": "html",
+            "text": "table-striped${1}",
+            "mTime": 1500553265343
+        },
+        {
+            "trigger": "bs-tablebordered",
+            "scope": "html",
+            "text": "table-bordered${1}",
+            "mTime": 1500553287297
+        },
+        {
+            "trigger": "bs-tablehover",
+            "scope": "html",
+            "text": "table-hover${1}",
+            "mTime": 1500553309731
+        },
+        {
+            "trigger": "bs-tablecondensed",
+            "scope": "html",
+            "text": "table-condensed${1}",
+            "mTime": 1500553334989
+        },
+        {
+            "trigger": "bs-rowactive",
+            "text": "active${1}",
+            "scope": "html",
+            "mTime": 1500553521964
+        },
+        {
+            "trigger": "bs-rowsuccess",
+            "scope": "html",
+            "text": "success${1}",
+            "mTime": 1500553512825
+        },
+        {
+            "trigger": "bs-rowinfo",
+            "scope": "html",
+            "text": "info${1}",
+            "mTime": 1500553542709
+        },
+        {
+            "trigger": "bs-rowwarning",
+            "scope": "html",
+            "text": "warning${1}",
+            "mTime": 1500553557962
+        },
+        {
+            "trigger": "bs-rowdanger",
+            "scope": "html",
+            "text": "danger${1}",
+            "mTime": 1500553575015
+        },
+        {
+            "trigger": "bs-tableresponsive",
+            "scope": "html",
+            "text": "table-responsive${1}",
+            "mTime": 1500553599023
+        },
+        {
+            "trigger": "bs-img-rounded",
+            "scope": "html",
+            "text": "img-rounded${1}",
+            "mTime": 1500553702763
+        },
+        {
+            "trigger": "bs-img-circle",
+            "scope": "html",
+            "text": "img-circle${1}",
+            "mTime": 1500553695679
+        },
+        {
+            "trigger": "bs-img-thumbnail",
+            "scope": "html",
+            "text": "img-thumbnail${1}",
+            "mTime": 1500553685175
+        },
+        {
+            "trigger": "bs-img-responsive",
+            "scope": "html",
+            "text": "img-responsive${1}",
+            "mTime": 1500553737870
+        },
+        {
+            "trigger": "bstpl-gallery",
+            "scope": "html",
+            "text": "<div class=\"row\">\n  <div class=\"col-md-4\">\n    <div class=\"thumbnail\">\n      <a href=\"/w3images/lights.jpg\">\n        <img src=\"/w3images/lights.jpg\" alt=\"Lights\" style=\"width:100%\">\n        <div class=\"caption\">\n          <p>Lorem ipsum...</p>\n        </div>\n      </a>\n    </div>\n  </div>\n  <div class=\"col-md-4\">\n    <div class=\"thumbnail\">\n      <a href=\"/w3images/nature.jpg\">\n        <img src=\"/w3images/nature.jpg\" alt=\"Nature\" style=\"width:100%\">\n        <div class=\"caption\">\n          <p>Lorem ipsum...</p>\n        </div>\n      </a>\n    </div>\n  </div>\n  <div class=\"col-md-4\">\n    <div class=\"thumbnail\">\n      <a href=\"/w3images/fjords.jpg\">\n        <img src=\"/w3images/fjords.jpg\" alt=\"Fjords\" style=\"width:100%\">\n        <div class=\"caption\">\n          <p>Lorem ipsum...</p>\n        </div>\n      </a>\n    </div>\n  </div>\n</div>",
+            "mTime": 1500553821306
+        },
+        {
+            "trigger": "bs-jumbotron",
+            "scope": "html",
+            "text": "<div class=\"jumbotron\">\n    <h1>Bootstrap Tutorial</h1> \n    <p>Bootstrap is the most popular HTML, CSS, and JS framework for developing responsive, mobile-first projects on the web.</p> \n</div>",
+            "mTime": 1500558908950
+        },
+        {
+            "trigger": "bs-page-header",
+            "scope": "html",
+            "text": "<div class=\"page-header\">\n  <h1>Example Page Header</h1>\n</div>",
+            "mTime": 1500554023175
+        },
+        {
+            "trigger": "bs-well",
+            "scope": "html",
+            "text": "<div class=\"well\">${1}</div>",
+            "mTime": 1500554127510
+        },
+        {
+            "trigger": "bs-well-small",
+            "scope": "html",
+            "text": "<div class=\"well well-sm\">${1}</div>",
+            "mTime": 1500554144863
+        },
+        {
+            "trigger": "bs-well-large",
+            "text": "<div class=\"well well-lg\">${1}</div>",
+            "scope": "html",
+            "mTime": 1500554158859
+        },
+        {
+            "trigger": "bs-alert-success",
+            "scope": "html",
+            "text": "<div class=\"alert alert-success\">\n  <strong>Success!</strong> Indicates a successful or positive action.\n</div>",
+            "mTime": 1500554203829
+        },
+        {
+            "trigger": "bs-alert-info",
+            "scope": "html",
+            "text": "<div class=\"alert alert-info\">\n  <strong>Info!</strong> Indicates a neutral informative change or action.\n</div>",
+            "mTime": 1500554222676
+        },
+        {
+            "trigger": "bs-alert-warning",
+            "scope": "html",
+            "text": "<div class=\"alert alert-warning\">\n  <strong>Warning!</strong> Indicates a warning that might need attention.\n</div>",
+            "mTime": 1500554247329
+        },
+        {
+            "trigger": "bs-alert-danger",
+            "scope": "html",
+            "text": "<div class=\"alert alert-danger\">\n  <strong>Danger!</strong> Indicates a dangerous or potentially negative action.\n</div>",
+            "mTime": 1500554261821
+        },
+        {
+            "trigger": "bs-alert-dismissable",
+            "scope": "html",
+            "text": "alert-dismissable${1}",
+            "mTime": 1500554304577
+        },
+        {
+            "trigger": "bs-btn-basic",
+            "scope": "html",
+            "text": "<button type=\"button\" class=\"btn\">${1}</button>",
+            "mTime": 1500554373167
+        },
+        {
+            "trigger": "bs-btn-default",
+            "scope": "html",
+            "text": "<button type=\"button\" class=\"btn btn-default\">${1}</button>",
+            "mTime": 1500554398037
+        },
+        {
+            "trigger": "bs-btn-primary",
+            "scope": "html",
+            "text": "<button type=\"button\" class=\"btn btn-primary\">${1}</button>",
+            "mTime": 1500554425647
+        },
+        {
+            "trigger": "bs-btn-success",
+            "scope": "html",
+            "text": "<button type=\"button\" class=\"btn btn-success\">${1}</button>",
+            "mTime": 1500554450995
+        },
+        {
+            "trigger": "bs-btn-info",
+            "scope": "html",
+            "text": "<button type=\"button\" class=\"btn btn-info\">${1}</button>",
+            "mTime": 1500554473515
+        },
+        {
+            "trigger": "bs-btn-warning",
+            "scope": "html",
+            "text": "<button type=\"button\" class=\"btn btn-warning\">${1}</button>",
+            "mTime": 1500554492596
+        },
+        {
+            "trigger": "bs-btn-danger",
+            "scope": "html",
+            "text": "<button type=\"button\" class=\"btn btn-danger\">${1}</button>",
+            "mTime": 1500554517426
+        },
+        {
+            "trigger": "bs-btn-link",
+            "scope": "html",
+            "text": "<button type=\"button\" class=\"btn btn-link\">${1}</button>",
+            "mTime": 1500554537843
+        },
+        {
+            "trigger": "bs-btn-large",
+            "scope": "html",
+            "text": "btn-lg${1}",
+            "mTime": 1500554628592
+        },
+        {
+            "trigger": "bs-btn-medium",
+            "scope": "html",
+            "text": "btn-md${1}",
+            "mTime": 1500554648725
+        },
+        {
+            "trigger": "bs-btn-small",
+            "scope": "html",
+            "text": "btn-sm${1}",
+            "mTime": 1500554665333
+        },
+        {
+            "trigger": "bs-btn-xsmall",
+            "scope": "html",
+            "text": "btn-xs${1}",
+            "mTime": 1500554682658
+        },
+        {
+            "trigger": "bs-btn-block",
+            "scope": "html",
+            "text": "btn-block${1}",
+            "mTime": 1500554707315
+        },
+        {
+            "trigger": "bs-btn-active",
+            "scope": "html",
+            "text": "active${1}",
+            "mTime": 1500554725419
+        },
+        {
+            "trigger": "bs-btn-disabled",
+            "scope": "html",
+            "text": "disabled${1}",
+            "mTime": 1500554740817
+        },
+        {
+            "trigger": "bs-btngroup",
+            "scope": "html",
+            "text": "<div class=\"btn-group\">\n  <button type=\"button\" class=\"btn btn-primary\">Apple</button>\n  <button type=\"button\" class=\"btn btn-primary\">Samsung</button>\n  <button type=\"button\" class=\"btn btn-primary\">Sony</button>\n</div>",
+            "mTime": 1500558891443
+        },
+        {
+            "trigger": "bs-btngroup-justified",
+            "scope": "html",
+            "text": "<div class=\"btn-group btn-group-justified\">\n  <a href=\"#\" class=\"btn btn-primary\">Apple</a>\n  <a href=\"#\" class=\"btn btn-primary\">Samsung</a>\n  <a href=\"#\" class=\"btn btn-primary\">Sony</a>\n</div>",
+            "mTime": 1500558899411
+        },
+        {
+            "trigger": "bs-dropdown-buttons",
+            "scope": "html",
+            "text": "<div class=\"btn-group\">\n  <button type=\"button\" class=\"btn btn-primary\">Apple</button>\n  <button type=\"button\" class=\"btn btn-primary\">Samsung</button>\n  <div class=\"btn-group\">\n    <button type=\"button\" class=\"btn btn-primary dropdown-toggle\" data-toggle=\"dropdown\">\n    Sony <span class=\"caret\"></span></button>\n    <ul class=\"dropdown-menu\" role=\"menu\">\n      <li><a href=\"#\">Tablet</a></li>\n      <li><a href=\"#\">Smartphone</a></li>\n    </ul>\n  </div>\n</div>",
+            "mTime": 1500556449935
+        },
+        {
+            "trigger": "bs-dropdown-split",
+            "scope": "html",
+            "text": "<div class=\"btn-group\">\n  <button type=\"button\" class=\"btn btn-primary\">Sony</button>\n  <button type=\"button\" class=\"btn btn-primary dropdown-toggle\" data-toggle=\"dropdown\">\n    <span class=\"caret\"></span>\n  </button>\n  <ul class=\"dropdown-menu\" role=\"menu\">\n    <li><a href=\"#\">Tablet</a></li>\n    <li><a href=\"#\">Smartphone</a></li>\n  </ul>\n</div>",
+            "mTime": 1500556457010
+        },
+        {
+            "trigger": "bs-icon",
+            "description": "glyphicon name",
+            "scope": "html",
+            "text": "<span class=\"glyphicon ${1:iconname}\"></span>",
+            "mTime": 1500555068000
+        },
+        {
+            "trigger": "bs-badge",
+            "scope": "html",
+            "text": "<span class=\"badge\">5</span>",
+            "mTime": 1500555099558
+        },
+        {
+            "trigger": "bs-label",
+            "scope": "html",
+            "text": "<span class=\"label label-default\">${1:text}</span>${2}",
+            "mTime": 1500555806571
+        },
+        {
+            "trigger": "bs-label-primary",
+            "scope": "html",
+            "text": "<span class=\"label label-primary\">${1:text}</span>${2}",
+            "mTime": 1500555828244
+        },
+        {
+            "trigger": "bs-label-info",
+            "scope": "html",
+            "text": "<span class=\"label label-info\">${1:text}</span>${2}",
+            "mTime": 1500555855779
+        },
+        {
+            "trigger": "bs-label-success",
+            "scope": "html",
+            "text": "<span class=\"label label-success\">${1:text}</span>${2}",
+            "mTime": 1500555878174
+        },
+        {
+            "scope": "html",
+            "text": "<span class=\"label label-warning\">${1:text}</span>${2}",
+            "trigger": "bs-label-warning",
+            "mTime": 1500555894879
+        },
+        {
+            "text": "<span class=\"label label-danger\">${1:text}</span>${2}",
+            "scope": "html",
+            "trigger": "bs-label-danger",
+            "mTime": 1500555911785
+        },
+        {
+            "trigger": "bs-progressbar",
+            "scope": "html",
+            "text": "<div class=\"progress\">\n  <div class=\"progress-bar progress-bar-danger\" role=\"progressbar\" aria-valuenow=\"70\"\n  aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width:70%\">\n    70%\n  </div>\n</div>",
+            "mTime": 1500558947496
+        },
+        {
+            "trigger": "bs-breadcrumbs",
+            "scope": "html",
+            "text": "<ul class=\"breadcrumb\">\n  <li><a href=\"#\">Home</a></li>\n  <li><a href=\"#\">Private</a></li>\n  <li><a href=\"#\">Pictures</a></li>\n  <li class=\"active\">Vacation</li> \n</ul>",
+            "mTime": 1500558883238
+        },
+        {
+            "trigger": "bs-list",
+            "scope": "html",
+            "text": "<ul class=\"list-group\">\n  <li class=\"list-group-item active\">New <span class=\"badge\">12</span></li>\n  <li class=\"list-group-item\">Deleted</li> \n  <li class=\"list-group-item\">Warnings</li> \n</ul>",
+            "mTime": 1500558939222
+        },
+        {
+            "trigger": "bs-panel",
+            "scope": "html",
+            "text": "<div class=\"panel panel-default\">\n  <div class=\"panel-heading\">Panel Heading</div>\n  <div class=\"panel-body\">Panel Content</div>\n  <div class=\"panel-footer\">Panel Footer</div>\n</div>",
+            "mTime": 1500556367190
+        },
+        {
+            "trigger": "bs-dropdown",
+            "scope": "html",
+            "text": "<div class=\"dropdown\">\n  <button class=\"btn btn-primary dropdown-toggle\" type=\"button\" data-toggle=\"dropdown\">Dropdown Example\n  <span class=\"caret\"></span></button>\n  <ul class=\"dropdown-menu\">\n    <li><a href=\"#\">HTML</a></li>\n    <li><a href=\"#\">CSS</a></li>\n    <li><a href=\"#\">JavaScript</a></li>\n  </ul>\n</div>",
+            "mTime": 1500556435536
+        },
+        {
+            "trigger": "bs-collapsible-panel",
+            "scope": "html",
+            "text": "<div class=\"panel-group\">\n  <div class=\"panel panel-default\">\n    <div class=\"panel-heading\">\n      <h4 class=\"panel-title\">\n        <a data-toggle=\"collapse\" href=\"#collapse1\">Collapsible panel</a>\n      </h4>\n    </div>\n    <div id=\"collapse1\" class=\"panel-collapse collapse\">\n      <div class=\"panel-body\">Panel Body</div>\n      <div class=\"panel-footer\">Panel Footer</div>\n    </div>\n  </div>\n</div>",
+            "mTime": 1500556611466
+        },
+        {
+            "trigger": "bs-pills",
+            "scope": "html",
+            "text": "<ul class=\"nav nav-pills\">\n  <li class=\"active\"><a href=\"#\">Home</a></li>\n  <li><a href=\"#\">Menu 1</a></li>\n  <li><a href=\"#\">Menu 2</a></li>\n  <li><a href=\"#\">Menu 3</a></li>\n</ul>",
+            "mTime": 1500556656995
+        },
+        {
+            "trigger": "bs-pills-vertical",
+            "scope": "html",
+            "text": "<ul class=\"nav nav-pills nav-stacked\">\n  <li class=\"active\"><a href=\"#\">Home</a></li>\n  <li><a href=\"#\">Menu 1</a></li>\n  <li><a href=\"#\">Menu 2</a></li>\n  <li><a href=\"#\">Menu 3</a></li>\n</ul>",
+            "mTime": 1500556678218
+        },
+        {
+            "trigger": "bs-navbar",
+            "scope": "html",
+            "text": "<nav class=\"navbar navbar-inverse navbar-fixed-top\">\n  <div class=\"container-fluid\">\n    <div class=\"navbar-header\">\n      <a class=\"navbar-brand\" href=\"#\">WebSiteName</a>\n    </div>\n    <ul class=\"nav navbar-nav\">\n      <li class=\"active\"><a href=\"#\">Home</a></li>\n      <li><a href=\"#\">Page 1</a></li>\n      <li><a href=\"#\">Page 2</a></li>\n    </ul>\n    <p class=\"navbar-text\">Some text</p>\n    <form class=\"navbar-form navbar-left\">\n      <div class=\"input-group\">\n        <input type=\"text\" class=\"form-control\" placeholder=\"Search\">\n        <div class=\"input-group-btn\">\n          <button class=\"btn btn-default\" type=\"submit\">\n            <i class=\"glyphicon glyphicon-search\"></i>\n          </button>\n        </div>\n      </div>\n    </form>\n    <ul class=\"nav navbar-nav navbar-right\">\n      <li><a href=\"#\"><span class=\"glyphicon glyphicon-user\"></span> Sign Up</a></li>\n      <li><a href=\"#\"><span class=\"glyphicon glyphicon-log-in\"></span> Login</a></li>\n    </ul>\n    <button class=\"btn btn-danger navbar-btn\">Button</button>\n  </div>\n</nav>",
+            "mTime": 1500556911668
+        },
+        {
+            "trigger": "bs-form",
+            "scope": "html",
+            "text": "<form>\n  <div class=\"form-group\">\n    <label for=\"email\">Email address:</label>\n    <input type=\"email\" class=\"form-control\" id=\"email\">\n  </div>\n  <div class=\"form-group\">\n    <label for=\"pwd\">Password:</label>\n    <input type=\"password\" class=\"form-control\" id=\"pwd\">\n  </div>\n  <div class=\"checkbox\">\n    <label><input type=\"checkbox\"> Remember me</label>\n  </div>\n  <button type=\"submit\" class=\"btn btn-default\">Submit</button>\n</form>",
+            "mTime": 1500557050779
+        },
+        {
+            "trigger": "bs-form-horizontal",
+            "scope": "html",
+            "text": "<form class=\"form-horizontal\">\n  <div class=\"form-group\">\n    <label class=\"control-label col-sm-2\" for=\"email\">Email:</label>\n    <div class=\"col-sm-10\">\n      <input type=\"email\" class=\"form-control\" id=\"email\" placeholder=\"Enter email\">\n    </div>\n  </div>\n  <div class=\"form-group\">\n    <label class=\"control-label col-sm-2\" for=\"pwd\">Password:</label>\n    <div class=\"col-sm-10\"> \n      <input type=\"password\" class=\"form-control\" id=\"pwd\" placeholder=\"Enter password\">\n    </div>\n  </div>\n  <div class=\"form-group\"> \n    <div class=\"col-sm-offset-2 col-sm-10\">\n      <div class=\"checkbox\">\n        <label><input type=\"checkbox\"> Remember me</label>\n      </div>\n    </div>\n  </div>\n  <div class=\"form-group\"> \n    <div class=\"col-sm-offset-2 col-sm-10\">\n      <button type=\"submit\" class=\"btn btn-default\">Submit</button>\n    </div>\n  </div>\n</form>",
+            "mTime": 1500557081263
+        },
+        {
+            "trigger": "bs-formgroup",
+            "scope": "html",
+            "text": "<div class=\"form-group\">\n  <label for=\"usr\">Name:</label>\n  <input type=\"text\" class=\"form-control\" id=\"usr\">\n</div>",
+            "mTime": 1500557116663
+        },
+        {
+            "trigger": "bs-textarea",
+            "scope": "html",
+            "text": "<div class=\"form-group\">\n  <label for=\"comment\">Comment:</label>\n  <textarea class=\"form-control\" rows=\"5\" id=\"comment\"></textarea>\n</div>",
+            "mTime": 1500557174546
+        },
+        {
+            "trigger": "bs-checkbox",
+            "scope": "html",
+            "text": "<div class=\"checkbox\">\n  <label><input type=\"checkbox\" value=\"\">Option 1</label>\n</div>",
+            "mTime": 1500557189755
+        },
+        {
+            "trigger": "bs-radio",
+            "scope": "html",
+            "text": "<div class=\"radio\">\n  <label><input type=\"radio\" name=\"optradio\">Option 1</label>\n</div>",
+            "mTime": 1500557207608
+        },
+        {
+            "trigger": "bs-select",
+            "scope": "html",
+            "text": "<div class=\"form-group\">\n  <label for=\"sel1\">Select list:</label>\n  <select class=\"form-control\" id=\"sel1\">\n    <option>1</option>\n    <option>2</option>\n    <option>3</option>\n    <option>4</option>\n  </select>\n</div>",
+            "mTime": 1500557241989
+        },
+        {
+            "trigger": "bs-form-static",
+            "text": "<div class=\"form-group\">\n    <label class=\"control-label col-sm-2\" for=\"email\">Email:</label>\n    <div class=\"col-sm-10\">\n      <p class=\"form-control-static\">someone@example.com</p>\n    </div>\n</div>",
+            "scope": "html",
+            "mTime": 1500557286675
+        },
+        {
+            "trigger": "bs-media",
+            "scope": "html",
+            "text": "<div class=\"media\">\n  <div class=\"media-left media-bottom\">\n    <img src=\"img_avatar1.png\" class=\"media-object\" style=\"width:60px\">\n  </div>\n  <div class=\"media-body\">\n    <h4 class=\"media-heading\">Media Bottom</h4>\n    <p>Lorem ipsum...</p>\n  </div>\n</div>",
+            "mTime": 1500557458246
+        },
+        {
+            "trigger": "bs-media-nested",
+            "scope": "html",
+            "text": "<div class=\"media\">\n    <div class=\"media-left\">\n      <img src=\"img_avatar1.png\" class=\"media-object\" style=\"width:45px\">\n    </div>\n    <div class=\"media-body\">\n      <h4 class=\"media-heading\">John Doe <small><i>Posted on February 19, 2016</i></small></h4>\n      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>\n      \n      <!-- Nested media object -->\n      <div class=\"media\">\n        <div class=\"media-left\">\n          <img src=\"img_avatar2.png\" class=\"media-object\" style=\"width:45px\">\n        </div>\n        <div class=\"media-body\">\n          <h4 class=\"media-heading\">John Doe <small><i>Posted on February 19, 2016</i></small></h4>\n          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>\n\n          <!-- Nested media object -->\n          <div class=\"media\">\n            <div class=\"media-left\">\n              <img src=\"img_avatar3.png\" class=\"media-object\" style=\"width:45px\">\n            </div>\n            <div class=\"media-body\">\n              <h4 class=\"media-heading\">John Doe <small><i>Posted on February 19, 2016</i></small></h4>\n              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>\n            </div>\n          </div>\n          \n        </div>\n      </div>\n      \n    </div>\n  </div>",
+            "mTime": 1500557542653
+        },
+        {
+            "trigger": "bs-carousel",
+            "scope": "html",
+            "text": "<div id=\"myCarousel\" class=\"carousel slide\" data-ride=\"carousel\">\n  <!-- Indicators -->\n  <ol class=\"carousel-indicators\">\n    <li data-target=\"#myCarousel\" data-slide-to=\"0\" class=\"active\"></li>\n    <li data-target=\"#myCarousel\" data-slide-to=\"1\"></li>\n    <li data-target=\"#myCarousel\" data-slide-to=\"2\"></li>\n  </ol>\n\n  <!-- Wrapper for slides -->\n  <div class=\"carousel-inner\">\n    <div class=\"item active\">\n      <img src=\"la.jpg\" alt=\"Los Angeles\">\n      <div class=\"carousel-caption\">\n        <h3>Los Angeles</h3>\n        <p>LA is always so much fun!</p>\n      </div>\n    </div>\n\n    <div class=\"item\">\n      <img src=\"chicago.jpg\" alt=\"Chicago\">\n    </div>\n\n    <div class=\"item\">\n      <img src=\"ny.jpg\" alt=\"New York\">\n    </div>\n  </div>\n\n  <!-- Left and right controls -->\n  <a class=\"left carousel-control\" href=\"#myCarousel\" data-slide=\"prev\">\n    <span class=\"glyphicon glyphicon-chevron-left\"></span>\n    <span class=\"sr-only\">Previous</span>\n  </a>\n  <a class=\"right carousel-control\" href=\"#myCarousel\" data-slide=\"next\">\n    <span class=\"glyphicon glyphicon-chevron-right\"></span>\n    <span class=\"sr-only\">Next</span>\n  </a>\n</div>",
+            "mTime": 1500557637590
+        },
+        {
+            "trigger": "bs-modal",
+            "scope": "html",
+            "text": "<!-- Trigger the modal with a button -->\n<button type=\"button\" class=\"btn btn-info btn-lg\" data-toggle=\"modal\" data-target=\"#myModal\">Open Modal</button>\n\n<!-- Modal -->\n<div id=\"myModal\" class=\"modal fade\" role=\"dialog\">\n  <div class=\"modal-dialog modal-sm\">\n\n    <!-- Modal content-->\n    <div class=\"modal-content\">\n      <div class=\"modal-header\">\n        <button type=\"button\" class=\"close\" data-dismiss=\"modal\">&times;</button>\n        <h4 class=\"modal-title\">Modal Header</h4>\n      </div>\n      <div class=\"modal-body\">\n        <p>Some text in the modal.</p>\n      </div>\n      <div class=\"modal-footer\">\n        <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Close</button>\n      </div>\n    </div>\n\n  </div>\n</div>",
+            "mTime": 1500557701796
+        },
+        {
+            "trigger": "bs-tooltip",
+            "scope": "html",
+            "text": "<a href=\"#\" data-toggle=\"tooltip\" data-placement=\"auto left\" title=\"Hooray!\">Hover</a>\n\n<script>\n$(document).ready(function(){\n    $('[data-toggle=\"tooltip\"]').tooltip(); \n});\n</script>",
+            "mTime": 1500557914579
+        },
+        {
+            "trigger": "bs-popover",
+            "scope": "html",
+            "text": "<a href=\"#\" data-toggle=\"popover\" title=\"Popover Header\" data-trigger=\"focus\" data-placement=\"auto right\" data-content=\"Some content inside the popover\">Toggle popover</a>\n\n<script>\n$(document).ready(function(){\n    $('[data-toggle=\"popover\"]').popover(); \n});\n</script>",
+            "mTime": 1500557955294
+        },
+        {
+            "trigger": "bs-scrollspy",
+            "scope": "html",
+            "text": "<!-- The scrollable area -->\n<body data-spy=\"scroll\" data-target=\".navbar\" data-offset=\"50\">\n\n<!-- The navbar - The <a> elements are used to jump to a section in the scrollable area -->\n<nav class=\"navbar navbar-inverse navbar-fixed-top\">\n...\n  <ul class=\"nav navbar-nav\">\n    <li><a href=\"#section1\">Section 1</a></li>\n    <li><a href=\"#section2\">Section 2</a></li>\n    <li><a href=\"#section3\">Section 3</a></li>\n</nav>\n\n<!-- Section 1 -->\n<div id=\"section1\">\n  <h1>Section 1</h1>\n  <p>Try to scroll this page and look at the navigation bar while scrolling!</p>\n</div>\n<div id=\"section2\">\n  <h1>Section 2</h1>\n  <p>Try to scroll this page and look at the navigation bar while scrolling!</p>\n</div>\n<div id=\"section3\">\n  <h1>Section 3</h1>\n  <p>Try to scroll this page and look at the navigation bar while scrolling!</p>\n</div>\n\n</body>",
+            "mTime": 1500558059489
+        },
+        {
+            "scope": "html",
+            "trigger": "bs-col-clearfix",
+            "text": "<div class=\"clearfix visible-xs\"></div>${1}",
+            "mTime": 1500558632596
+        },
+        {
+            "trigger": "bs-col-offset",
+            "scope": "html",
+            "text": "col-sm-offset-2${1}",
+            "mTime": 1500558625995
+        },
+        {
+            "trigger": "bs-theme-blog",
+            "scope": "html",
+            "text": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <title>Bootstrap Example</title>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\">\n  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js\"></script>\n  <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js\"></script>\n  <style>\n    /* Set height of the grid so .sidenav can be 100% (adjust if needed) */\n    .row.content {height: 1500px}\n    \n    /* Set gray background color and 100% height */\n    .sidenav {\n      background-color: #f1f1f1;\n      height: 100%;\n    }\n    \n    /* Set black background color, white text and some padding */\n    footer {\n      background-color: #555;\n      color: white;\n      padding: 15px;\n    }\n    \n    /* On small screens, set height to 'auto' for sidenav and grid */\n    @media screen and (max-width: 767px) {\n      .sidenav {\n        height: auto;\n        padding: 15px;\n      }\n      .row.content {height: auto;} \n    }\n  </style>\n</head>\n<body>\n\n<div class=\"container-fluid\">\n  <div class=\"row content\">\n    <div class=\"col-sm-3 sidenav\">\n      <h4>John's Blog</h4>\n      <ul class=\"nav nav-pills nav-stacked\">\n        <li class=\"active\"><a href=\"#section1\">Home</a></li>\n        <li><a href=\"#section2\">Friends</a></li>\n        <li><a href=\"#section3\">Family</a></li>\n        <li><a href=\"#section3\">Photos</a></li>\n      </ul><br>\n      <div class=\"input-group\">\n        <input type=\"text\" class=\"form-control\" placeholder=\"Search Blog..\">\n        <span class=\"input-group-btn\">\n          <button class=\"btn btn-default\" type=\"button\">\n            <span class=\"glyphicon glyphicon-search\"></span>\n          </button>\n        </span>\n      </div>\n    </div>\n\n    <div class=\"col-sm-9\">\n      <h4><small>RECENT POSTS</small></h4>\n      <hr>\n      <h2>I Love Food</h2>\n      <h5><span class=\"glyphicon glyphicon-time\"></span> Post by Jane Dane, Sep 27, 2015.</h5>\n      <h5><span class=\"label label-danger\">Food</span> <span class=\"label label-primary\">Ipsum</span></h5><br>\n      <p>Food is my passion. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>\n      <br><br>\n      \n      <h4><small>RECENT POSTS</small></h4>\n      <hr>\n      <h2>Officially Blogging</h2>\n      <h5><span class=\"glyphicon glyphicon-time\"></span> Post by John Doe, Sep 24, 2015.</h5>\n      <h5><span class=\"label label-success\">Lorem</span></h5><br>\n      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>\n      <hr>\n\n      <h4>Leave a Comment:</h4>\n      <form role=\"form\">\n        <div class=\"form-group\">\n          <textarea class=\"form-control\" rows=\"3\" required></textarea>\n        </div>\n        <button type=\"submit\" class=\"btn btn-success\">Submit</button>\n      </form>\n      <br><br>\n      \n      <p><span class=\"badge\">2</span> Comments:</p><br>\n      \n      <div class=\"row\">\n        <div class=\"col-sm-2 text-center\">\n          <img src=\"bandmember.jpg\" class=\"img-circle\" height=\"65\" width=\"65\" alt=\"Avatar\">\n        </div>\n        <div class=\"col-sm-10\">\n          <h4>Anja <small>Sep 29, 2015, 9:12 PM</small></h4>\n          <p>Keep up the GREAT work! I am cheering for you!! Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>\n          <br>\n        </div>\n        <div class=\"col-sm-2 text-center\">\n          <img src=\"bird.jpg\" class=\"img-circle\" height=\"65\" width=\"65\" alt=\"Avatar\">\n        </div>\n        <div class=\"col-sm-10\">\n          <h4>John Row <small>Sep 25, 2015, 8:25 PM</small></h4>\n          <p>I am so happy for you man! Finally. I am looking forward to read about your trendy life. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>\n          <br>\n          <p><span class=\"badge\">1</span> Comment:</p><br>\n          <div class=\"row\">\n            <div class=\"col-sm-2 text-center\">\n              <img src=\"bird.jpg\" class=\"img-circle\" height=\"65\" width=\"65\" alt=\"Avatar\">\n            </div>\n            <div class=\"col-xs-10\">\n              <h4>Nested Bro <small>Sep 25, 2015, 8:28 PM</small></h4>\n              <p>Me too! WOW!</p>\n              <br>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n\n<footer class=\"container-fluid\">\n  <p>Footer Text</p>\n</footer>\n\n</body>\n</html>",
+            "mTime": 1500559215033
+        },
+        {
+            "scope": "html",
+            "trigger": "bs-theme-portfolio",
+            "text": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <title>Bootstrap Example</title>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\">\n  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js\"></script>\n  <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js\"></script>\n  <style>\n    /* Remove the navbar's default margin-bottom and rounded borders */ \n    .navbar {\n      margin-bottom: 0;\n      border-radius: 0;\n    }\n    \n    /* Add a gray background color and some padding to the footer */\n    footer {\n      background-color: #f2f2f2;\n      padding: 25px;\n    }\n  </style>\n</head>\n<body>\n\n<nav class=\"navbar navbar-inverse\">\n  <div class=\"container-fluid\">\n    <div class=\"navbar-header\">\n      <button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\"#myNavbar\">\n        <span class=\"icon-bar\"></span>\n        <span class=\"icon-bar\"></span>\n        <span class=\"icon-bar\"></span>                        \n      </button>\n      <a class=\"navbar-brand\" href=\"#\">Portfolio</a>\n    </div>\n    <div class=\"collapse navbar-collapse\" id=\"myNavbar\">\n      <ul class=\"nav navbar-nav\">\n        <li class=\"active\"><a href=\"#\">Home</a></li>\n        <li><a href=\"#\">About</a></li>\n        <li><a href=\"#\">Gallery</a></li>\n        <li><a href=\"#\">Contact</a></li>\n      </ul>\n      <ul class=\"nav navbar-nav navbar-right\">\n        <li><a href=\"#\"><span class=\"glyphicon glyphicon-log-in\"></span> Login</a></li>\n      </ul>\n    </div>\n  </div>\n</nav>\n\n<div class=\"jumbotron\">\n  <div class=\"container text-center\">\n    <h1>My Portfolio</h1>      \n    <p>Some text that represents \"Me\"...</p>\n  </div>\n</div>\n  \n<div class=\"container-fluid bg-3 text-center\">    \n  <h3>Some of my Work</h3><br>\n  <div class=\"row\">\n    <div class=\"col-sm-3\">\n      <p>Some text..</p>\n      <img src=\"https://placehold.it/150x80?text=IMAGE\" class=\"img-responsive\" style=\"width:100%\" alt=\"Image\">\n    </div>\n    <div class=\"col-sm-3\"> \n      <p>Some text..</p>\n      <img src=\"https://placehold.it/150x80?text=IMAGE\" class=\"img-responsive\" style=\"width:100%\" alt=\"Image\">\n    </div>\n    <div class=\"col-sm-3\"> \n      <p>Some text..</p>\n      <img src=\"https://placehold.it/150x80?text=IMAGE\" class=\"img-responsive\" style=\"width:100%\" alt=\"Image\">\n    </div>\n    <div class=\"col-sm-3\">\n      <p>Some text..</p>\n      <img src=\"https://placehold.it/150x80?text=IMAGE\" class=\"img-responsive\" style=\"width:100%\" alt=\"Image\">\n    </div>\n  </div>\n</div><br>\n\n<div class=\"container-fluid bg-3 text-center\">    \n  <div class=\"row\">\n    <div class=\"col-sm-3\">\n      <p>Some text..</p>\n      <img src=\"https://placehold.it/150x80?text=IMAGE\" class=\"img-responsive\" style=\"width:100%\" alt=\"Image\">\n    </div>\n    <div class=\"col-sm-3\"> \n      <p>Some text..</p>\n      <img src=\"https://placehold.it/150x80?text=IMAGE\" class=\"img-responsive\" style=\"width:100%\" alt=\"Image\">\n    </div>\n    <div class=\"col-sm-3\"> \n      <p>Some text..</p>\n      <img src=\"https://placehold.it/150x80?text=IMAGE\" class=\"img-responsive\" style=\"width:100%\" alt=\"Image\">\n    </div>\n    <div class=\"col-sm-3\">\n      <p>Some text..</p>\n      <img src=\"https://placehold.it/150x80?text=IMAGE\" class=\"img-responsive\" style=\"width:100%\" alt=\"Image\">\n    </div>\n  </div>\n</div><br><br>\n\n<footer class=\"container-fluid text-center\">\n  <p>Footer Text</p>\n</footer>\n\n</body>\n</html>\n",
+            "mTime": 1500559240443
+        },
+        {
+            "trigger": "bs-theme-marketing",
+            "scope": "html",
+            "text": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <title>Bootstrap Example</title>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\">\n  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js\"></script>\n  <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js\"></script>\n  <style>\n    /* Remove the navbar's default margin-bottom and rounded borders */ \n    .navbar {\n      margin-bottom: 0;\n      border-radius: 0;\n    }\n    \n    /* Add a gray background color and some padding to the footer */\n    footer {\n      background-color: #f2f2f2;\n      padding: 25px;\n    }\n    \n  .carousel-inner img {\n      width: 100%; /* Set width to 100% */\n      margin: auto;\n      min-height:200px;\n  }\n\n  /* Hide the carousel text when the screen is less than 600 pixels wide */\n  @media (max-width: 600px) {\n    .carousel-caption {\n      display: none; \n    }\n  }\n  </style>\n</head>\n<body>\n\n<nav class=\"navbar navbar-inverse\">\n  <div class=\"container-fluid\">\n    <div class=\"navbar-header\">\n      <button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\"#myNavbar\">\n        <span class=\"icon-bar\"></span>\n        <span class=\"icon-bar\"></span>\n        <span class=\"icon-bar\"></span>                        \n      </button>\n      <a class=\"navbar-brand\" href=\"#\">Logo</a>\n    </div>\n    <div class=\"collapse navbar-collapse\" id=\"myNavbar\">\n      <ul class=\"nav navbar-nav\">\n        <li class=\"active\"><a href=\"#\">Home</a></li>\n        <li><a href=\"#\">About</a></li>\n        <li><a href=\"#\">Projects</a></li>\n        <li><a href=\"#\">Contact</a></li>\n      </ul>\n      <ul class=\"nav navbar-nav navbar-right\">\n        <li><a href=\"#\"><span class=\"glyphicon glyphicon-log-in\"></span> Login</a></li>\n      </ul>\n    </div>\n  </div>\n</nav>\n\n<div id=\"myCarousel\" class=\"carousel slide\" data-ride=\"carousel\">\n    <!-- Indicators -->\n    <ol class=\"carousel-indicators\">\n      <li data-target=\"#myCarousel\" data-slide-to=\"0\" class=\"active\"></li>\n      <li data-target=\"#myCarousel\" data-slide-to=\"1\"></li>\n    </ol>\n\n    <!-- Wrapper for slides -->\n    <div class=\"carousel-inner\" role=\"listbox\">\n      <div class=\"item active\">\n        <img src=\"https://placehold.it/1200x400?text=IMAGE\" alt=\"Image\">\n        <div class=\"carousel-caption\">\n          <h3>Sell $</h3>\n          <p>Money Money.</p>\n        </div>      \n      </div>\n\n      <div class=\"item\">\n        <img src=\"https://placehold.it/1200x400?text=Another Image Maybe\" alt=\"Image\">\n        <div class=\"carousel-caption\">\n          <h3>More Sell $</h3>\n          <p>Lorem ipsum...</p>\n        </div>      \n      </div>\n    </div>\n\n    <!-- Left and right controls -->\n    <a class=\"left carousel-control\" href=\"#myCarousel\" role=\"button\" data-slide=\"prev\">\n      <span class=\"glyphicon glyphicon-chevron-left\" aria-hidden=\"true\"></span>\n      <span class=\"sr-only\">Previous</span>\n    </a>\n    <a class=\"right carousel-control\" href=\"#myCarousel\" role=\"button\" data-slide=\"next\">\n      <span class=\"glyphicon glyphicon-chevron-right\" aria-hidden=\"true\"></span>\n      <span class=\"sr-only\">Next</span>\n    </a>\n</div>\n  \n<div class=\"container text-center\">    \n  <h3>What We Do</h3><br>\n  <div class=\"row\">\n    <div class=\"col-sm-4\">\n      <img src=\"https://placehold.it/150x80?text=IMAGE\" class=\"img-responsive\" style=\"width:100%\" alt=\"Image\">\n      <p>Current Project</p>\n    </div>\n    <div class=\"col-sm-4\"> \n      <img src=\"https://placehold.it/150x80?text=IMAGE\" class=\"img-responsive\" style=\"width:100%\" alt=\"Image\">\n      <p>Project 2</p>    \n    </div>\n    <div class=\"col-sm-4\">\n      <div class=\"well\">\n       <p>Some text..</p>\n      </div>\n      <div class=\"well\">\n       <p>Some text..</p>\n      </div>\n    </div>\n  </div>\n</div><br>\n\n<footer class=\"container-fluid text-center\">\n  <p>Footer Text</p>\n</footer>\n\n</body>\n</html>\n",
+            "mTime": 1500559229694
+        },
+        {
+            "trigger": "bs-theme-portfolio2",
+            "scope": "html",
+            "text": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <!-- Theme Made By www.w3schools.com - No Copyright -->\n  <title>Bootstrap Theme Simply Me</title>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\">\n  <link href=\"https://fonts.googleapis.com/css?family=Montserrat\" rel=\"stylesheet\">\n  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js\"></script>\n  <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js\"></script>\n  <style>\n  body {\n      font: 20px Montserrat, sans-serif;\n      line-height: 1.8;\n      color: #f5f6f7;\n  }\n  p {font-size: 16px;}\n  .margin {margin-bottom: 45px;}\n  .bg-1 { \n      background-color: #1abc9c; /* Green */\n      color: #ffffff;\n  }\n  .bg-2 { \n      background-color: #474e5d; /* Dark Blue */\n      color: #ffffff;\n  }\n  .bg-3 { \n      background-color: #ffffff; /* White */\n      color: #555555;\n  }\n  .bg-4 { \n      background-color: #2f2f2f; /* Black Gray */\n      color: #fff;\n  }\n  .container-fluid {\n      padding-top: 70px;\n      padding-bottom: 70px;\n  }\n  .navbar {\n      padding-top: 15px;\n      padding-bottom: 15px;\n      border: 0;\n      border-radius: 0;\n      margin-bottom: 0;\n      font-size: 12px;\n      letter-spacing: 5px;\n  }\n  .navbar-nav  li a:hover {\n      color: #1abc9c !important;\n  }\n  </style>\n</head>\n<body>\n\n<!-- Navbar -->\n<nav class=\"navbar navbar-default\">\n  <div class=\"container\">\n    <div class=\"navbar-header\">\n      <button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\"#myNavbar\">\n        <span class=\"icon-bar\"></span>\n        <span class=\"icon-bar\"></span>\n        <span class=\"icon-bar\"></span>                        \n      </button>\n      <a class=\"navbar-brand\" href=\"#\">Me</a>\n    </div>\n    <div class=\"collapse navbar-collapse\" id=\"myNavbar\">\n      <ul class=\"nav navbar-nav navbar-right\">\n        <li><a href=\"#\">WHO</a></li>\n        <li><a href=\"#\">WHAT</a></li>\n        <li><a href=\"#\">WHERE</a></li>\n      </ul>\n    </div>\n  </div>\n</nav>\n\n<!-- First Container -->\n<div class=\"container-fluid bg-1 text-center\">\n  <h3 class=\"margin\">Who Am I?</h3>\n  <img src=\"bird.jpg\" class=\"img-responsive img-circle margin\" style=\"display:inline\" alt=\"Bird\" width=\"350\" height=\"350\">\n  <h3>I'm an adventurer</h3>\n</div>\n\n<!-- Second Container -->\n<div class=\"container-fluid bg-2 text-center\">\n  <h3 class=\"margin\">What Am I?</h3>\n  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>\n  <a href=\"#\" class=\"btn btn-default btn-lg\">\n    <span class=\"glyphicon glyphicon-search\"></span> Search\n  </a>\n</div>\n\n<!-- Third Container (Grid) -->\n<div class=\"container-fluid bg-3 text-center\">    \n  <h3 class=\"margin\">Where To Find Me?</h3><br>\n  <div class=\"row\">\n    <div class=\"col-sm-4\">\n      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>\n      <img src=\"birds1.jpg\" class=\"img-responsive margin\" style=\"width:100%\" alt=\"Image\">\n    </div>\n    <div class=\"col-sm-4\"> \n      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>\n      <img src=\"birds2.jpg\" class=\"img-responsive margin\" style=\"width:100%\" alt=\"Image\">\n    </div>\n    <div class=\"col-sm-4\"> \n      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>\n      <img src=\"birds3.jpg\" class=\"img-responsive margin\" style=\"width:100%\" alt=\"Image\">\n    </div>\n  </div>\n</div>\n\n<!-- Footer -->\n<footer class=\"container-fluid bg-4 text-center\">\n  <p>Bootstrap Theme Made By <a href=\"https://www.w3schools.com\">www.w3schools.com</a></p> \n</footer>\n\n</body>\n</html>\n",
+            "mTime": 1500559247694
+        },
+        {
+            "trigger": "bs-theme-company",
+            "scope": "html",
+            "text": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <!-- Theme Made By www.w3schools.com - No Copyright -->\n  <title>Bootstrap Theme Company Page</title>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\">\n  <link href=\"https://fonts.googleapis.com/css?family=Montserrat\" rel=\"stylesheet\" type=\"text/css\">\n  <link href=\"https://fonts.googleapis.com/css?family=Lato\" rel=\"stylesheet\" type=\"text/css\">\n  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js\"></script>\n  <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js\"></script>\n  <style>\n  body {\n      font: 400 15px Lato, sans-serif;\n      line-height: 1.8;\n      color: #818181;\n  }\n  h2 {\n      font-size: 24px;\n      text-transform: uppercase;\n      color: #303030;\n      font-weight: 600;\n      margin-bottom: 30px;\n  }\n  h4 {\n      font-size: 19px;\n      line-height: 1.375em;\n      color: #303030;\n      font-weight: 400;\n      margin-bottom: 30px;\n  }  \n  .jumbotron {\n      background-color: #f4511e;\n      color: #fff;\n      padding: 100px 25px;\n      font-family: Montserrat, sans-serif;\n  }\n  .container-fluid {\n      padding: 60px 50px;\n  }\n  .bg-grey {\n      background-color: #f6f6f6;\n  }\n  .logo-small {\n      color: #f4511e;\n      font-size: 50px;\n  }\n  .logo {\n      color: #f4511e;\n      font-size: 200px;\n  }\n  .thumbnail {\n      padding: 0 0 15px 0;\n      border: none;\n      border-radius: 0;\n  }\n  .thumbnail img {\n      width: 100%;\n      height: 100%;\n      margin-bottom: 10px;\n  }\n  .carousel-control.right, .carousel-control.left {\n      background-image: none;\n      color: #f4511e;\n  }\n  .carousel-indicators li {\n      border-color: #f4511e;\n  }\n  .carousel-indicators li.active {\n      background-color: #f4511e;\n  }\n  .item h4 {\n      font-size: 19px;\n      line-height: 1.375em;\n      font-weight: 400;\n      font-style: italic;\n      margin: 70px 0;\n  }\n  .item span {\n      font-style: normal;\n  }\n  .panel {\n      border: 1px solid #f4511e; \n      border-radius:0 !important;\n      transition: box-shadow 0.5s;\n  }\n  .panel:hover {\n      box-shadow: 5px 0px 40px rgba(0,0,0, .2);\n  }\n  .panel-footer .btn:hover {\n      border: 1px solid #f4511e;\n      background-color: #fff !important;\n      color: #f4511e;\n  }\n  .panel-heading {\n      color: #fff !important;\n      background-color: #f4511e !important;\n      padding: 25px;\n      border-bottom: 1px solid transparent;\n      border-top-left-radius: 0px;\n      border-top-right-radius: 0px;\n      border-bottom-left-radius: 0px;\n      border-bottom-right-radius: 0px;\n  }\n  .panel-footer {\n      background-color: white !important;\n  }\n  .panel-footer h3 {\n      font-size: 32px;\n  }\n  .panel-footer h4 {\n      color: #aaa;\n      font-size: 14px;\n  }\n  .panel-footer .btn {\n      margin: 15px 0;\n      background-color: #f4511e;\n      color: #fff;\n  }\n  .navbar {\n      margin-bottom: 0;\n      background-color: #f4511e;\n      z-index: 9999;\n      border: 0;\n      font-size: 12px !important;\n      line-height: 1.42857143 !important;\n      letter-spacing: 4px;\n      border-radius: 0;\n      font-family: Montserrat, sans-serif;\n  }\n  .navbar li a, .navbar .navbar-brand {\n      color: #fff !important;\n  }\n  .navbar-nav li a:hover, .navbar-nav li.active a {\n      color: #f4511e !important;\n      background-color: #fff !important;\n  }\n  .navbar-default .navbar-toggle {\n      border-color: transparent;\n      color: #fff !important;\n  }\n  footer .glyphicon {\n      font-size: 20px;\n      margin-bottom: 20px;\n      color: #f4511e;\n  }\n  .slideanim {visibility:hidden;}\n  .slide {\n      animation-name: slide;\n      -webkit-animation-name: slide;\n      animation-duration: 1s;\n      -webkit-animation-duration: 1s;\n      visibility: visible;\n  }\n  @keyframes slide {\n    0% {\n      opacity: 0;\n      transform: translateY(70%);\n    } \n    100% {\n      opacity: 1;\n      transform: translateY(0%);\n    }\n  }\n  @-webkit-keyframes slide {\n    0% {\n      opacity: 0;\n      -webkit-transform: translateY(70%);\n    } \n    100% {\n      opacity: 1;\n      -webkit-transform: translateY(0%);\n    }\n  }\n  @media screen and (max-width: 768px) {\n    .col-sm-4 {\n      text-align: center;\n      margin: 25px 0;\n    }\n    .btn-lg {\n        width: 100%;\n        margin-bottom: 35px;\n    }\n  }\n  @media screen and (max-width: 480px) {\n    .logo {\n        font-size: 150px;\n    }\n  }\n  </style>\n</head>\n<body id=\"myPage\" data-spy=\"scroll\" data-target=\".navbar\" data-offset=\"60\">\n\n<nav class=\"navbar navbar-default navbar-fixed-top\">\n  <div class=\"container\">\n    <div class=\"navbar-header\">\n      <button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\"#myNavbar\">\n        <span class=\"icon-bar\"></span>\n        <span class=\"icon-bar\"></span>\n        <span class=\"icon-bar\"></span>                        \n      </button>\n      <a class=\"navbar-brand\" href=\"#myPage\">Logo</a>\n    </div>\n    <div class=\"collapse navbar-collapse\" id=\"myNavbar\">\n      <ul class=\"nav navbar-nav navbar-right\">\n        <li><a href=\"#about\">ABOUT</a></li>\n        <li><a href=\"#services\">SERVICES</a></li>\n        <li><a href=\"#portfolio\">PORTFOLIO</a></li>\n        <li><a href=\"#pricing\">PRICING</a></li>\n        <li><a href=\"#contact\">CONTACT</a></li>\n      </ul>\n    </div>\n  </div>\n</nav>\n\n<div class=\"jumbotron text-center\">\n  <h1>Company</h1> \n  <p>We specialize in blablabla</p> \n  <form>\n    <div class=\"input-group\">\n      <input type=\"email\" class=\"form-control\" size=\"50\" placeholder=\"Email Address\" required>\n      <div class=\"input-group-btn\">\n        <button type=\"button\" class=\"btn btn-danger\">Subscribe</button>\n      </div>\n    </div>\n  </form>\n</div>\n\n<!-- Container (About Section) -->\n<div id=\"about\" class=\"container-fluid\">\n  <div class=\"row\">\n    <div class=\"col-sm-8\">\n      <h2>About Company Page</h2><br>\n      <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h4><br>\n      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>\n      <br><button class=\"btn btn-default btn-lg\">Get in Touch</button>\n    </div>\n    <div class=\"col-sm-4\">\n      <span class=\"glyphicon glyphicon-signal logo\"></span>\n    </div>\n  </div>\n</div>\n\n<div class=\"container-fluid bg-grey\">\n  <div class=\"row\">\n    <div class=\"col-sm-4\">\n      <span class=\"glyphicon glyphicon-globe logo slideanim\"></span>\n    </div>\n    <div class=\"col-sm-8\">\n      <h2>Our Values</h2><br>\n      <h4><strong>MISSION:</strong> Our mission lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h4><br>\n      <p><strong>VISION:</strong> Our vision Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\n      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>\n    </div>\n  </div>\n</div>\n\n<!-- Container (Services Section) -->\n<div id=\"services\" class=\"container-fluid text-center\">\n  <h2>SERVICES</h2>\n  <h4>What we offer</h4>\n  <br>\n  <div class=\"row slideanim\">\n    <div class=\"col-sm-4\">\n      <span class=\"glyphicon glyphicon-off logo-small\"></span>\n      <h4>POWER</h4>\n      <p>Lorem ipsum dolor sit amet..</p>\n    </div>\n    <div class=\"col-sm-4\">\n      <span class=\"glyphicon glyphicon-heart logo-small\"></span>\n      <h4>LOVE</h4>\n      <p>Lorem ipsum dolor sit amet..</p>\n    </div>\n    <div class=\"col-sm-4\">\n      <span class=\"glyphicon glyphicon-lock logo-small\"></span>\n      <h4>JOB DONE</h4>\n      <p>Lorem ipsum dolor sit amet..</p>\n    </div>\n  </div>\n  <br><br>\n  <div class=\"row slideanim\">\n    <div class=\"col-sm-4\">\n      <span class=\"glyphicon glyphicon-leaf logo-small\"></span>\n      <h4>GREEN</h4>\n      <p>Lorem ipsum dolor sit amet..</p>\n    </div>\n    <div class=\"col-sm-4\">\n      <span class=\"glyphicon glyphicon-certificate logo-small\"></span>\n      <h4>CERTIFIED</h4>\n      <p>Lorem ipsum dolor sit amet..</p>\n    </div>\n    <div class=\"col-sm-4\">\n      <span class=\"glyphicon glyphicon-wrench logo-small\"></span>\n      <h4 style=\"color:#303030;\">HARD WORK</h4>\n      <p>Lorem ipsum dolor sit amet..</p>\n    </div>\n  </div>\n</div>\n\n<!-- Container (Portfolio Section) -->\n<div id=\"portfolio\" class=\"container-fluid text-center bg-grey\">\n  <h2>Portfolio</h2><br>\n  <h4>What we have created</h4>\n  <div class=\"row text-center slideanim\">\n    <div class=\"col-sm-4\">\n      <div class=\"thumbnail\">\n        <img src=\"paris.jpg\" alt=\"Paris\" width=\"400\" height=\"300\">\n        <p><strong>Paris</strong></p>\n        <p>Yes, we built Paris</p>\n      </div>\n    </div>\n    <div class=\"col-sm-4\">\n      <div class=\"thumbnail\">\n        <img src=\"newyork.jpg\" alt=\"New York\" width=\"400\" height=\"300\">\n        <p><strong>New York</strong></p>\n        <p>We built New York</p>\n      </div>\n    </div>\n    <div class=\"col-sm-4\">\n      <div class=\"thumbnail\">\n        <img src=\"sanfran.jpg\" alt=\"San Francisco\" width=\"400\" height=\"300\">\n        <p><strong>San Francisco</strong></p>\n        <p>Yes, San Fran is ours</p>\n      </div>\n    </div>\n  </div><br>\n  \n  <h2>What our customers say</h2>\n  <div id=\"myCarousel\" class=\"carousel slide text-center\" data-ride=\"carousel\">\n    <!-- Indicators -->\n    <ol class=\"carousel-indicators\">\n      <li data-target=\"#myCarousel\" data-slide-to=\"0\" class=\"active\"></li>\n      <li data-target=\"#myCarousel\" data-slide-to=\"1\"></li>\n      <li data-target=\"#myCarousel\" data-slide-to=\"2\"></li>\n    </ol>\n\n    <!-- Wrapper for slides -->\n    <div class=\"carousel-inner\" role=\"listbox\">\n      <div class=\"item active\">\n        <h4>\"This company is the best. I am so happy with the result!\"<br><span>Michael Roe, Vice President, Comment Box</span></h4>\n      </div>\n      <div class=\"item\">\n        <h4>\"One word... WOW!!\"<br><span>John Doe, Salesman, Rep Inc</span></h4>\n      </div>\n      <div class=\"item\">\n        <h4>\"Could I... BE any more happy with this company?\"<br><span>Chandler Bing, Actor, FriendsAlot</span></h4>\n      </div>\n    </div>\n\n    <!-- Left and right controls -->\n    <a class=\"left carousel-control\" href=\"#myCarousel\" role=\"button\" data-slide=\"prev\">\n      <span class=\"glyphicon glyphicon-chevron-left\" aria-hidden=\"true\"></span>\n      <span class=\"sr-only\">Previous</span>\n    </a>\n    <a class=\"right carousel-control\" href=\"#myCarousel\" role=\"button\" data-slide=\"next\">\n      <span class=\"glyphicon glyphicon-chevron-right\" aria-hidden=\"true\"></span>\n      <span class=\"sr-only\">Next</span>\n    </a>\n  </div>\n</div>\n\n<!-- Container (Pricing Section) -->\n<div id=\"pricing\" class=\"container-fluid\">\n  <div class=\"text-center\">\n    <h2>Pricing</h2>\n    <h4>Choose a payment plan that works for you</h4>\n  </div>\n  <div class=\"row slideanim\">\n    <div class=\"col-sm-4 col-xs-12\">\n      <div class=\"panel panel-default text-center\">\n        <div class=\"panel-heading\">\n          <h1>Basic</h1>\n        </div>\n        <div class=\"panel-body\">\n          <p><strong>20</strong> Lorem</p>\n          <p><strong>15</strong> Ipsum</p>\n          <p><strong>5</strong> Dolor</p>\n          <p><strong>2</strong> Sit</p>\n          <p><strong>Endless</strong> Amet</p>\n        </div>\n        <div class=\"panel-footer\">\n          <h3>$19</h3>\n          <h4>per month</h4>\n          <button class=\"btn btn-lg\">Sign Up</button>\n        </div>\n      </div>      \n    </div>     \n    <div class=\"col-sm-4 col-xs-12\">\n      <div class=\"panel panel-default text-center\">\n        <div class=\"panel-heading\">\n          <h1>Pro</h1>\n        </div>\n        <div class=\"panel-body\">\n          <p><strong>50</strong> Lorem</p>\n          <p><strong>25</strong> Ipsum</p>\n          <p><strong>10</strong> Dolor</p>\n          <p><strong>5</strong> Sit</p>\n          <p><strong>Endless</strong> Amet</p>\n        </div>\n        <div class=\"panel-footer\">\n          <h3>$29</h3>\n          <h4>per month</h4>\n          <button class=\"btn btn-lg\">Sign Up</button>\n        </div>\n      </div>      \n    </div>       \n    <div class=\"col-sm-4 col-xs-12\">\n      <div class=\"panel panel-default text-center\">\n        <div class=\"panel-heading\">\n          <h1>Premium</h1>\n        </div>\n        <div class=\"panel-body\">\n          <p><strong>100</strong> Lorem</p>\n          <p><strong>50</strong> Ipsum</p>\n          <p><strong>25</strong> Dolor</p>\n          <p><strong>10</strong> Sit</p>\n          <p><strong>Endless</strong> Amet</p>\n        </div>\n        <div class=\"panel-footer\">\n          <h3>$49</h3>\n          <h4>per month</h4>\n          <button class=\"btn btn-lg\">Sign Up</button>\n        </div>\n      </div>      \n    </div>    \n  </div>\n</div>\n\n<!-- Container (Contact Section) -->\n<div id=\"contact\" class=\"container-fluid bg-grey\">\n  <h2 class=\"text-center\">CONTACT</h2>\n  <div class=\"row\">\n    <div class=\"col-sm-5\">\n      <p>Contact us and we'll get back to you within 24 hours.</p>\n      <p><span class=\"glyphicon glyphicon-map-marker\"></span> Chicago, US</p>\n      <p><span class=\"glyphicon glyphicon-phone\"></span> +00 1515151515</p>\n      <p><span class=\"glyphicon glyphicon-envelope\"></span> myemail@something.com</p>\n    </div>\n    <div class=\"col-sm-7 slideanim\">\n      <div class=\"row\">\n        <div class=\"col-sm-6 form-group\">\n          <input class=\"form-control\" id=\"name\" name=\"name\" placeholder=\"Name\" type=\"text\" required>\n        </div>\n        <div class=\"col-sm-6 form-group\">\n          <input class=\"form-control\" id=\"email\" name=\"email\" placeholder=\"Email\" type=\"email\" required>\n        </div>\n      </div>\n      <textarea class=\"form-control\" id=\"comments\" name=\"comments\" placeholder=\"Comment\" rows=\"5\"></textarea><br>\n      <div class=\"row\">\n        <div class=\"col-sm-12 form-group\">\n          <button class=\"btn btn-default pull-right\" type=\"submit\">Send</button>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n\n<!-- Add Google Maps -->\n<div id=\"googleMap\" style=\"height:400px;width:100%;\"></div>\n<script>\nfunction myMap() {\nvar myCenter = new google.maps.LatLng(41.878114, -87.629798);\nvar mapProp = {center:myCenter, zoom:12, scrollwheel:false, draggable:false, mapTypeId:google.maps.MapTypeId.ROADMAP};\nvar map = new google.maps.Map(document.getElementById(\"googleMap\"),mapProp);\nvar marker = new google.maps.Marker({position:myCenter});\nmarker.setMap(map);\n}\n</script>\n<script src=\"https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap\"></script>\n<!--\nTo use this code on your website, get a free API key from Google.\nRead more at: https://www.w3schools.com/graphics/google_maps_basic.asp\n-->\n\n<footer class=\"container-fluid text-center\">\n  <a href=\"#myPage\" title=\"To Top\">\n    <span class=\"glyphicon glyphicon-chevron-up\"></span>\n  </a>\n  <p>Bootstrap Theme Made By <a href=\"https://www.w3schools.com\" title=\"Visit w3schools\">www.w3schools.com</a></p>\n</footer>\n\n<script>\n$(document).ready(function(){\n  // Add smooth scrolling to all links in navbar + footer link\n  $(\".navbar a, footer a[href='#myPage']\").on('click', function(event) {\n    // Make sure this.hash has a value before overriding default behavior\n    if (this.hash !== \"\") {\n      // Prevent default anchor click behavior\n      event.preventDefault();\n\n      // Store hash\n      var hash = this.hash;\n\n      // Using jQuery's animate() method to add smooth page scroll\n      // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area\n      $('html, body').animate({\n        scrollTop: $(hash).offset().top\n      }, 900, function(){\n   \n        // Add hash (#) to URL when done scrolling (default click behavior)\n        window.location.hash = hash;\n      });\n    } // End if\n  });\n  \n  $(window).scroll(function() {\n    $(\".slideanim\").each(function(){\n      var pos = $(this).offset().top;\n\n      var winTop = $(window).scrollTop();\n        if (pos < winTop + 600) {\n          $(this).addClass(\"slide\");\n        }\n    });\n  });\n})\n</script>\n\n</body>\n</html>\n",
+            "mTime": 1500559202268
+        },
+        {
+            "trigger": "bs-snippet-contactform",
+            "scope": "html",
+            "text": "<div class=\"container\">\n  <h3 class=\"text-center\">Contact</h3>\n  <p class=\"text-center\"><em>We love our fans!</em></p>\n  <div class=\"row test\">\n    <div class=\"col-md-4\">\n      <p>Fan? Drop a note.</p>\n      <p><span class=\"glyphicon glyphicon-map-marker\"></span>Chicago, US</p>\n      <p><span class=\"glyphicon glyphicon-phone\"></span>Phone: +00 1515151515</p>\n      <p><span class=\"glyphicon glyphicon-envelope\"></span>Email: mail@mail.com</p> \n    </div>\n    <div class=\"col-md-8\">\n      <div class=\"row\">\n        <div class=\"col-sm-6 form-group\">\n          <input class=\"form-control\" id=\"name\" name=\"name\" placeholder=\"Name\" type=\"text\" required>\n        </div>\n        <div class=\"col-sm-6 form-group\">\n          <input class=\"form-control\" id=\"email\" name=\"email\" placeholder=\"Email\" type=\"email\" required>\n        </div>\n      </div>\n      <textarea class=\"form-control\" id=\"comments\" name=\"comments\" placeholder=\"Comment\" rows=\"5\"></textarea>\n      <div class=\"row\">\n        <div class=\"col-md-12 form-group\">\n          <button class=\"btn pull-right\" type=\"submit\">Send</button>\n        </div>\n      </div> \n    </div>\n  </div>\n</div>",
+            "mTime": 1500559358232
         },
         {
             "trigger": "ani",
